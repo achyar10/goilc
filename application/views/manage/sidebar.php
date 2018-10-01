@@ -33,6 +33,22 @@
           </a>
         </li>
 
+        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'category') ? 'active' : '' ?>">
+          <a href="javascript:void(0)" class="submenu-toggle">
+            <i class="menu-icon zmdi zmdi-account zmdi-hc-lg"></i>
+            <span class="menu-text">Pelatihan</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+          </a>
+          <ul class="submenu">
+            <li class="<?php echo ($this->uri->segment(2) == 'category') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/category') ?>"><span class="menu-text">Daftar Kategori</span></a>
+            </li>
+            <li class="<?php echo ($this->uri->segment(2) == 'service') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/service') ?>"><span class="menu-text">Daftar Pelayanan</span></a>
+            </li>
+          </ul>
+        </li>
+
 
         <li class="has-submenu <?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?>">
           <a href="javascript:void(0)" class="submenu-toggle">
