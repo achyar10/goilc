@@ -7,7 +7,7 @@ class Category_model extends CI_Model {
     function get($params = array()) {
 
         if (isset($params['id'])) {
-            $this->db->where('category.category_id', $params['id']);
+            $this->db->where('categories.category_id', $params['id']);
         }
         
         if (isset($params['user_id'])) {

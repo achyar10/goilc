@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-   <link rel="shortcut icon" href="<?php echo media_url('ico/favicon.png') ?>"/>
+  <link rel="shortcut icon" href="<?php echo media_url('ico/favicon.png') ?>"/>
   <title>iLC | <?php echo isset($title) ? ' | ' . $title : null; ?></title>
   
   <link rel="stylesheet" href="<?php echo media_url('library/font-awesome/css/font-awesome.min.css') ?>">
@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="<?php echo media_url('css/bootstrap.css') ?>">
   <link rel="stylesheet" href="<?php echo media_url('css/core.css') ?>">
   <link rel="stylesheet" href="<?php echo media_url('css/app.css') ?>">
+  <link rel="stylesheet" href="<?php echo media_url('css/bootstrap-datepicker.min.css') ?>">
+  <link rel="stylesheet" href="<?php echo media_url('css/bootstrap-datetimepicker.min.css') ?>">
   <!-- endbuild -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
   <script src="<?php echo media_url('library/breakpoints.js/dist/breakpoints.min.js') ?>"></script>
@@ -131,10 +133,40 @@
 
 <!-- build:js ../assets/js/app.min.js -->
 <script src="<?php echo media_url('js/library.js') ?>"></script>
+<script src="<?php echo media_url('js/bootstrap-datepicker.min.js') ?>"></script>
+<script src="<?php echo media_url('js/bootstrap-datetimepicker.min.js') ?>"></script>
 <script src="<?php echo media_url('js/plugins.js') ?>"></script>
 <script src="<?php echo media_url('js/app.js') ?>"></script>
 <script src="<?php echo media_url('js/jquery.toast.js') ?>"></script>
+<script src="<?php echo media_url('js/jquery.inputmask.bundle.js') ?>"></script>
 <!-- endbuild -->
+
+<script type="text/javascript">
+  
+  // $(".time").datetimepicker({
+  //   format: "LT",
+  //   autoclose: true
+  // });
+
+  $(".date").datepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  $(document).ready(function(){
+    $('.numeric').inputmask("numeric", {
+      removeMaskOnSubmit: true,
+      radixPoint: ".",
+      groupSeparator: ",",
+      digits: 2,
+      autoGroup: true,
+            prefix: 'Rp ', //Space after $, this will not truncate the first character.
+            rightAlign: false,
+
+          });
+  });
+</script>
 
 <?php if ($this->session->flashdata('success')) { ?>
   <script>

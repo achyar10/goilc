@@ -49,7 +49,7 @@ class Category_manage extends CI_Controller {
 		$this->form_validation->set_rules('category_name', 'Title', 'trim|xss_clean|required');
 
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button position="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
-		$data['operation'] = is_null($id) ? 'Add' : 'Edit';
+		$data['operation'] = is_null($id) ? 'Tambah' : 'Edit';
 
 		if ($_POST AND $this->form_validation->run() == TRUE) {
 
@@ -77,7 +77,7 @@ class Category_manage extends CI_Controller {
 				}
 			}
 
-			$data['title'] = $data['operation'] . ' category';
+			$data['title'] = $data['operation'] . ' Kategori';
 			$data['main'] = 'category/category_add';
 			$this->load->view('manage/layout', $data);
 		}
