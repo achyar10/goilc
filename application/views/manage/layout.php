@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
   <link rel="shortcut icon" href="<?php echo media_url('ico/favicon.png') ?>"/>
-  <title>iLC | <?php echo isset($title) ? ' | ' . $title : null; ?></title>
+  <title>iLC <?php echo isset($title) ? ' | ' . $title : null; ?></title>
   
   <link rel="stylesheet" href="<?php echo media_url('library/font-awesome/css/font-awesome.min.css') ?>">
   <link rel="stylesheet" href="<?php echo media_url('library/material-design-iconic-font/dist/css/material-design-iconic-font.min.css') ?>">
@@ -142,7 +142,7 @@
 <!-- endbuild -->
 
 <script type="text/javascript">
-  
+
   // $(".time").datetimepicker({
   //   format: "LT",
   //   autoclose: true

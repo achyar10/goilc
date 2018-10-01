@@ -1,126 +1,160 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="ckan 2.8.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabanan Open Data</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/css/select2.css') ?>" />
-  <link rel="stylesheet" href="<?php echo media_url('library/font-awesome/css/font-awesome.min.css') ?>">
+  <meta charset="utf-8">
 
-  <link rel="shortcut icon" href="<?php echo media_url('ico/favicon.png') ?>"/>
-  <link rel="stylesheet" href="<?php echo media_url('frontend/css/custom.css') ?>" />
-  <link rel="stylesheet" href="<?php echo media_url('frontend/css/animate.css') ?>" />
-  <link rel="stylesheet" href="<?php echo media_url('css/grid12.css') ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title>iLC <?php echo isset($title) ? ' | ' . $title : null; ?></title>
+  <!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="<?php echo media_url('ico/favicon.png') ?>"/>
+  
+  <!-- Library - Bootstrap v3.3.5 -->
+    <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/libraries/lib.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/libraries/Stroke-Gap-Icon/stroke-gap-icon.css') ?>">
+  
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900,300,300italic,500,700' rel='stylesheet' type='text/css'> 
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- Custom - Common CSS -->
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/css/plugins.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/css/navigation-menu.css') ?>">
+  
+  <!-- Custom - Theme CSS --> 
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/css/style.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/css/shortcode.css') ?>">
 
-  <script src="<?php echo media_url('library/jquery/dist/jquery.js') ?>"></script>
-
+  <script src="<?php echo media_url('frontend/js/jquery.min.js') ?>"></script>
+  
+  <!--[if lt IE 9]>
+    <script src="js/html5/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-
-<body data-site-root="http://data.tabanankab.go.id/" data-locale-root="http://data.tabanankab.go.id/" >
-
-
-  <div class="hide"><a href="#content">Skip to content</a></div>
-
-
-  <header class="account-masthead">
-    <div class="container">
-      <div class="account avatar authed" data-module="me" data-me="acc796e2-1b6e-415e-9c14-34bfa127fedf">
-        <ul class="unstyled">
-          <li>
-            <a href="<?php echo site_url('manage') ?>">
-             <?php if (!$this->session->userdata('logged')){ ?>
-              <i class="fa fa-sign-in" aria-hidden="true"></i>
-              <span class="">Masuk</span>
-            <?php } else { ?>
-              <i class="fa fa-dashboard" aria-hidden="true"></i>
-              <span class="">Dashboard</span>
-            <?php } ?>
-            </a>
-          </li>
-        </ul>
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+  <!-- LOADER -->
+  <div id="site-loader" class="load-complete">
+    <div class="loader">
+      <div class="loader-inner ball-clip-rotate">
+        <div></div>
       </div>
     </div>
-  </header>
-
-  <header class="navbar navbar-static-top masthead">
-
-
-
-    <div class="container">
-      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <hgroup class="header-image pull-left" style="margin-top:-10px;">
-
-
-
-        <a class="logo" href="http://data.tabanan.go.id">
-          <img src="<?php echo media_url('img/tabanan-logo.png') ?>" alt="Tabanan Open Data" style="height: 50px;" title="Tabanan Open Data" />
-        </a>
-        
-
-
-      </hgroup>
-
-      <div class="nav-collapse collapse">
-
-
-        <nav class="section navigation">
-          <ul class="nav nav-pills">
-
-            <li><a href="http://data.tabanankab.go.id">Beranda</a></li>
-            <li><a href="http://data.tabanankab.go.id/dataset">Data</a></li>
-            <li><a href="http://data.tabanankab.go.id/organization">Organisasi</a></li>
-            <li><a href="http://data.tabanankab.go.id/group">Topik</a></li>
-            <li class="<?php echo ($this->uri->segment(1) == 'infografis') ? 'active' : '' ?>"><a href="<?php echo site_url('infografis') ?>">Infografis</a></li>
-            <li class="<?php echo ($this->uri->segment(1) == 'visualisation') ? 'active' : '' ?>"><a href="<?php echo site_url('visualisation') ?>">Visualisasi</a></li>
-            <li><a href="http://data.tabanankab.go.id/about">Tentang</a></li>
-
-          </ul>
-        </nav>
-
-
-
-      </div>
-    </div>
-  </header>
-
-  
-  <div role="main">
-    <?php isset($main) ? $this->load->view($main) : null; ?>
-  </div>
-
-  <footer class="site-footer">
-    <div class="container">
-
-      <div class="row">
-        <div class="span10 footer-links">
-          <p>
-            Copyright &copy; 2018 | Tabanan Open Data
-          </p>
-
-
-          <a href="http://www.opendefinition.org/okd/" target="_blank"><img src="<?php echo media_url('img/od_80x15_blue.png') ?>"></a>
-
+  </div><!-- Loader /- -->  
+  <!-- Header -->
+  <header class="header-main container-fluid no-padding">
+    <!-- Top Header -->
+    <div class="top-header container-fluid no-padding">
+      <div class="container">
+        <div class="topheader-left">
+          <a href="tel:+5198759822" title="5198759822"><i class="fa fa-mobile" aria-hidden="true"></i>(021) - 123 - 456 </a>
+          <a href="mailto:Support@info.com" title="Support@info.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: info@goilc.co.id</a>
         </div>
-        <div class="span2 attribution">
-          <div class="soc-media text-left">
-            <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-twitter"></i></a>
-            <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-facebook"></i></a>
-            <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-youtube"></i></a>
-            <a href="#" target="_blank"><i aria-hidden="true" class="fa fa-instagram"></i></a>
+        <div class="topheader-right">
+          <a href="<?php echo site_url('manage') ?>" title="Login"><i class="fa fa-sign-out" aria-hidden="true"></i>Login</a>
+          <a href="#" title="Register">Register</a>
+        </div>
+      </div>
+    </div><!-- Top Header /- -->
+    
+    <!-- Menu Block -->
+    <div class="menu-block container-fluid no-padding">
+      <!-- Container -->
+      <div class="container">
+        <div class="row">
+          <!-- Navigation -->
+          <nav class="navbar ow-navigation">
+            <div class="col-md-3">
+              <div class="navbar-header">
+                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top: 15px; ;height: 80px;" alt="logo"/>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav menubar">
+                   <li><a title="Contact" href="#">Beranda</a></li>
+                   <li><a title="Contact" href="#">Kegiatan</a></li>
+                  
+                  <li class="dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Layanan Kami</a>
+                    <i class="ddl-switch fa fa-angle-down"></i>
+                    <ul class="dropdown-menu">
+                      <li><a title="Home 2" href="#">Home 2</a></li>
+                      <li><a title="Course Detail" href="#">Course Detail</a></li>
+                      <li><a title="BlogPost" href="#">BlogPost</a></li>
+                    </ul>
+                  </li>
+                  <li><a title="Contact" href="#">Tentang Kami</a></li>
+                  <li><a title="Contact" href="#">Hubungi Kami</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav><!-- Navigation /- -->
+          <div class="menu-search">
+            <div id="sb-search" class="sb-search">
+              <form>
+                <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search" />
+                <button class="sb-search-submit"><i class="fa fa-search"></i></button>
+                <span class="sb-icon-search"></span>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </div><!-- Container /- -->
+    </div><!-- Menu Block /- -->
+  </header><!-- Header /- -->
+  <!-- PhotoSlider Section -->
 
-    </div>
-
-  </footer> 
-
+  <?php isset($main) ? $this->load->view($main) : null; ?>
+  
+      <!-- Footer Bottom -->
+      <div class="footer-bottom col-md-12 col-sm-12 no-padding">
+        <div class="copyright no-padding">
+          <span>Copyright &copy; <?php echo date('Y') ?>. All Rights Reserved.</span>
+        </div>
+        <nav class="navbar ow-navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar2" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html" title="Home">Home</a></li>
+              <li><a href="courses-page.html" title="COURSE">COURS</a></li>
+              <li><a href="events-page.html" title="Events">Events</a></li>
+              <li><a href="blog-page.html" title="Blog">Blog</a></li>
+              <li><a href="about-page.html" title="About">About</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div><!-- Footer Bottom /- -->
+    </div><!-- Container /- -->
+  </footer><!-- Footer /- -->
+  
+  <!-- JQuery v1.11.3 --> 
+  
+  <!--script src="js/jquery.knob.js"></script-->
+  
+  <!-- Library - Js -->
+  <script src="<?php echo media_url('frontend/libraries/lib.js') ?>"></script><!-- Bootstrap JS File v3.3.5 -->
+  <!-- Library - Google Map API -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+  
+  <!-- Library - Theme JS -->
+  <script src="<?php echo media_url('frontend/js/functions.js') ?>"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
 										<td><span class="label label-<?php echo ($row['training_status']==1) ? 'success' : 'danger'?>"><?php echo ($row['training_status']==1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
 										<td>
 											<a href="<?php echo site_url('manage/training/edit/'.$row['training_id']) ?>" class="btn btn-success btn-xs">Edit</a>
-											<a href="<?php echo site_url('manage/training/edit/'.$row['training_id']) ?>" class="btn btn-info btn-xs">Lihat</a>
+											<a href="<?php echo site_url('manage/training/view/'.$row['training_id']) ?>" class="btn btn-info btn-xs">Lihat</a>
 										</td>
 									</tr>
 									<?php
