@@ -8,6 +8,7 @@
       </div>
       <div class="topheader-right">
         <a href="<?php echo site_url('manage') ?>" title="Login"><i class="fa fa-sign-out" aria-hidden="true"></i>Login</a>
+        <a href="<?php echo site_url('register') ?>">Register Pelatihan</a>
       </div>
     </div>
   </div><!-- Top Header /- -->
@@ -27,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top: 15px; ;height: 80px;" alt="logo"/>
+              <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top: 15px; ;height: 80px;" alt="logo" class="">
             </div>
           </div>
           <div class="col-md-9">

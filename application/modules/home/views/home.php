@@ -40,7 +40,7 @@
 <div class="container welcome-section">
   <div class="section-padding"></div>
   <div class="section-header">
-    <h3>Popular <span>Courses</span></h3>
+    <h3>Pelatihan <span>Courses</span></h3>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
   </div>
   <div class="row">
@@ -259,132 +259,6 @@
     <div class="section-padding"></div>
   </div><!-- Event Section /- --> 
   
-  <!-- Search Courses -->
-  <div class="container-fluid no-padding searchcourses">
-    <div class="container"> 
-      <div class="search-content">
-        <div class="searchcourses-block">
-          <h3>Over 3,000+ students trust us world wide. Get free online courses tips, Subscribe us</h3>
-        </div>
-        <div class="course-search-block">
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <select class="selectpicker">
-              <option>All Categories</option>
-              <option>Categories 1</option>
-              <option>Categories 2</option>
-              <option>Categories 3</option>
-            </select>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <select class="selectpicker">
-              <option>Course Level</option>
-              <option>Level 1</option>
-              <option>Level 2</option>
-              <option>Level 3</option>
-            </select>
-          </div>
-          <div class="col-md-6 col-sm-6  col-xs-12 search_box">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Course Keyword . . . ">
-              <span class="input-group-btn">
-                <button class="btn" type="button" title="Search courses">Search courses</button>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="search-categories">
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Over 500 students Enrolled Learn Skills</span></p>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><i class="fa fa-paper-plane-o" aria-hidden="true"></i><span>More than 300+ Online Courses Available</span></p>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><i class="fa fa-tencent-weibo" aria-hidden="true"></i><span>Learn Skills on any Devices anytime</span></p>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <p><i class="fa fa-user-md" aria-hidden="true"></i><span>More than 320 Instructors Available</span></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- Search Courses /- -->
-  
-  <!-- Video Testimonial Section -->
-  <div class="container-fluid no-padding video-testimonial-section">
-    <div class="container">
-      <div class="section-padding"></div>
-      <div class="section-header">
-        <h3>Our <span>Education Events</span></h3>
-        <p>Achieving the desired success requires patience and persistence your goals need time</p>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="video-block video-block-lg">
-            <a title="Paly Video" class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto"><i class="fa fa-play" aria-hidden="true"></i></a>
-            <img  src="<?php echo media_url('frontend/images/video-poster-1.jpg') ?>" width="570" height="400" alt="Video Poster-1"/>
-            <div class="video-content">
-              <h3>Your Career Starts Here</h3>
-              <p>Achieving the desired success requires patience and persistence.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="testimonial-block">
-            <div id="testimonial-slider" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#testimonial-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#testimonial-slider" data-slide-to="1"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <div class="testimonial-box">
-                    <div class="testimonial-content">
-                      <p>Credibly innovate granular internal or organic sources whereas high standards in web-readiness fully researched growth.</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <img src="<?php echo media_url('frontend/images/testimonial-thumb-1.jpg') ?>" alt="testimonial-thumb-1" width="96" height="96"/>
-                      <p>Darly Dixon, <span>Designing Staff</span></p>
-                    </div>
-                  </div>
-                  <div class="testimonial-box">
-                    <div class="testimonial-content">
-                      <p>Credibly innovate granular internal or organic sources whereas high standards in web-readiness fully researched growth.</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <img src="<?php echo media_url('frontend/images/testimonial-thumb-2.jpg') ?>" alt="testimonial-thumb-2" width="96" height="96"/>
-                      <p>Josh Austin,<span>Project Manager</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="testimonial-box">
-                    <div class="testimonial-content">
-                      <p>Credibly innovate granular internal or organic sources whereas high standards in web-readiness fully researched growth.</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <img src="<?php echo media_url('frontend/images/testimonial-thumb-1.jpg') ?>" alt="testimonial-thumb-1" width="96" height="96"/>
-                      <p>Darly Dixon <span>Designing Staff</span></p>
-                    </div>
-                  </div>
-                  <div class="testimonial-box">
-                    <div class="testimonial-content">
-                      <p>Credibly innovate granular internal or organic sources whereas high standards in web-readiness fully researched growth.</p>
-                    </div>
-                    <div class="testimonial-author">
-                      <img src="<?php echo media_url('frontend/images/testimonial-thumb-2.jpg') ?>" alt="testimonial-thumb-2" width="96" height="96"/>
-                      <p>Josh Austin ,<span>Project Manager</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section-padding"></div>
-    </div>
-  </div><!-- Video Testimonial Section /- --> 
   
   <!-- LatestBlog Section -->
   <div class="container-fulid no-padding latestblog-section">
