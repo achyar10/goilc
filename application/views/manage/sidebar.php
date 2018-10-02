@@ -64,6 +64,13 @@
           </ul>
         </li>
 
+        <li class="<?php echo ($this->uri->segment(2) == 'mailbox') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/mailbox') ?>">
+            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <span class="menu-text">Mailbox</span>
+          </a>
+        </li>
+
         <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/client') ?>">
             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>

@@ -9,6 +9,10 @@ class Register_model extends CI_Model {
             $this->db->where('registers.register_id', $params['id']);
         }
 
+        if (isset($params['training_id'])) {
+            $this->db->where('registers.training_id', $params['training_id']);
+        }
+
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
                 $params['offset'] = NULL;
@@ -26,6 +30,7 @@ class Register_model extends CI_Model {
         $this->db->select('*');
 
         $this->db->join('members', 'members.member_id = registers.member_id','right');
+        $this->db->join('trainings', 'trainings.training_id = registers.training_id','left');
 
         $res = $this->db->get('registers');
 
@@ -92,6 +97,10 @@ class Register_model extends CI_Model {
 
         if (isset($data['register_add_inv'])) {
             $this->db->set('register_add_inv', $data['register_add_inv']);
+        }
+
+        if (isset($data['training_id'])) {
+            $this->db->set('training_id', $data['training_id']);
         }
 
         if (isset($data['register_input_date'])) {
