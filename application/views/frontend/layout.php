@@ -13,6 +13,8 @@
   
   <!-- Library - Bootstrap v3.3.5 -->
   <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/libraries/lib.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo media_url('css/frontend.css') ?>">
+  <link rel="stylesheet" href="<?php echo media_url('css/jquery.toast.css') ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo media_url('frontend/libraries/Stroke-Gap-Icon/stroke-gap-icon.css') ?>">
   
   <!-- Fonts -->
@@ -116,11 +118,43 @@
   </footer>
 
   <!-- Library - Js -->
+  <script src="<?php echo media_url('js/jquery.toast.js') ?>"></script>
   <script src="<?php echo media_url('frontend/libraries/lib.js') ?>"></script><!-- Bootstrap JS File v3.3.5 -->
-  <!-- Library - Google Map API -->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
   <!-- Library - Theme JS -->
   <script src="<?php echo media_url('frontend/js/functions.js') ?>"></script>
+
+  <?php if ($this->session->flashdata('success')) { ?>
+    <script>
+      $(document).ready(function() {
+        $.toast({
+         heading: 'Berhasil',
+         text: '<?php echo $this->session->flashdata('success') ?>',
+         position: 'top-right',
+         loaderBg: '#ff6849',
+         icon: 'success',
+         hideAfter: 3500,
+         stack: 6
+       })
+      });
+    </script>
+  <?php } ?>
+
+  <?php if ($this->session->flashdata('failed')) { ?>
+    <script>
+      $(document).ready(function() {
+        $.toast({
+         heading: 'Gagal',
+         text: '<?php echo $this->session->flashdata('failed') ?>',
+         position: 'top-right',
+         loaderBg: '#ff6849',
+         icon: 'error',
+         hideAfter: 3500,
+         stack: 6
+       })
+      });
+    </script>
+  <?php } ?>
+
 </body>
 </html>
