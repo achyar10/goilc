@@ -29,7 +29,7 @@
 
         <li>
           <a href="<?php echo site_url('home') ?>" target="_blank">
-            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-globe zmdi-hc-lg"></i>
             <span class="menu-text">Lihat Website</span>
           </a>
         </li>
@@ -43,14 +43,14 @@
 
         <li class="<?php echo ($this->uri->segment(2) == 'training') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/training') ?>">
-            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-assignment-check zmdi-hc-lg"></i>
             <span class="menu-text">Jadwal Pelatihan</span>
           </a>
         </li>
 
         <li class="has-submenu <?php echo ($this->uri->segment(2) == 'category') ? 'active' : '' ?>">
           <a href="javascript:void(0)" class="submenu-toggle">
-            <i class="menu-icon zmdi zmdi-account zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-assignment zmdi-hc-lg"></i>
             <span class="menu-text">Master Pelatihan</span>
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
@@ -66,21 +66,21 @@
 
         <li class="<?php echo ($this->uri->segment(2) == 'mailbox') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/mailbox') ?>">
-            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
             <span class="menu-text">Mailbox</span>
           </a>
         </li>
 
         <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/client') ?>">
-            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
             <span class="menu-text">Client</span>
           </a>
         </li>
 
         <li class="<?php echo ($this->uri->segment(2) == 'gallery') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/gallery') ?>">
-            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <i class="menu-icon zmdi zmdi-picture-in-picture zmdi-hc-lg"></i>
             <span class="menu-text">Gallery</span>
           </a>
         </li>

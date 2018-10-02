@@ -24,7 +24,7 @@ class Gallery_model extends CI_Model {
         if (isset($params['order_by'])) {
             $this->db->order_by($params['order_by'], 'desc');
         } else {
-            $this->db->order_by('gallery_id', 'desc');
+            $this->db->order_by('gallery_date', 'desc');
         }
 
         $this->db->select('*');
@@ -58,6 +58,10 @@ class Gallery_model extends CI_Model {
 
         if (isset($data['gallery_desc'])) {
             $this->db->set('gallery_desc', $data['gallery_desc']);
+        }
+
+        if (isset($data['gallery_date'])) {
+            $this->db->set('gallery_date', $data['gallery_date']);
         }
 
         if (isset($data['gallery_id'])) {

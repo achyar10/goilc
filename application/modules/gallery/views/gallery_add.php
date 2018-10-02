@@ -5,11 +5,13 @@ if (isset($gallery)) {
 	$inputNameValue = $gallery['gallery_name'];
 	$inputPlaceValue = $gallery['gallery_place'];
 	$inputDescValue = $gallery['gallery_desc'];
+	$inputDateValue = $gallery['gallery_date'];
 	
 } else {
 	$inputNameValue = set_value('gallery_name');
 	$inputPlaceValue = set_value('gallery_place');
 	$inputDescValue = set_value('gallery_desc');
+	$inputDateValue = set_value('gallery_date');
 }
 ?>
 
@@ -37,6 +39,11 @@ if (isset($gallery)) {
 					<div class="form-group">
 						<label>Tempat Pelaksanaan</label>
 						<input name="gallery_place" type="text" class="form-control" value="<?php echo $inputPlaceValue ?>" placeholder="Tempat Pelaksanaan">
+					</div>
+
+					<div class="form-group">
+						<label>Tanggal Pelaksanaan</label>
+						<input name="gallery_date" type="text" class="form-control date" value="<?php echo $inputDateValue ?>" placeholder="Tanggal Pelaksanaan">
 					</div>
 
 					<div class="form-group">

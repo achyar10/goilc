@@ -5,8 +5,8 @@
 				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?></h4>
 				<div class="row">
 					<div class="col-md-3">
-						<?php if (isset($training) AND $training['training_brocure'] != NULL) { ?>
-							<img src="<?php echo upload_url('training/' . $training['training_brocure']) ?>" class="img-responsive img-thumbnail">
+						<?php if (isset($gallery) AND $gallery['gallery_image'] != NULL) { ?>
+							<img src="<?php echo upload_url('gallery/' . $gallery['gallery_image']) ?>" class="img-responsive img-thumbnail">
 						<?php } else { ?>
 							<img src="<?php echo media_url('img/missing.png') ?>" class="img-responsive img-thumbnail">
 						<?php } ?>
@@ -15,43 +15,28 @@
 						<div class="table-responsive">
 							<table class="table table-hover">
 								<tr>
-									<td>Nama Pelatihan</td>
+									<td>Judul</td>
 									<td>:</td>
-									<td><?php echo $training['training_name'] ?></td>
-								</tr>
-								<tr>
-									<td>Kategori</td>
-									<td>:</td>
-									<td><?php echo $training['category_name'] ?></td>
+									<td><?php echo $gallery['gallery_name'] ?></td>
 								</tr>
 								<tr>
 									<td>Tempat</td>
 									<td>:</td>
-									<td><?php echo $training['training_place'] ?></td>
+									<td><?php echo $gallery['gallery_place'] ?></td>
 								</tr>
 								<tr>
 									<td>Tanggal Pelaksanaan</td>
 									<td>:</td>
-									<td><?php echo pretty_date($training['training_date_start'],'d F Y',false) .' s/d '.pretty_date($training['training_date_end'],'d F Y',false) ?></td>
+									<td><?php echo pretty_date($gallery['gallery_date'],'d F Y',false); ?></td>
 								</tr>
 								<tr>
-									<td>Waktu Pelatihan</td>
+									<td>Deskripsi</td>
 									<td>:</td>
-									<td><?php echo $training['training_time'] ?></td>
-								</tr>
-								<tr>
-									<td>Harga</td>
-									<td>:</td>
-									<td><?php echo 'Rp. '. number_format($training['training_price']) ?></td>
-								</tr>
-								<tr>
-									<td>Tanggal Buat</td>
-									<td>:</td>
-									<td><?php echo pretty_date($training['training_input_date'],'d F Y H:i:s',false) ?></td>
+									<td><?php echo $gallery['gallery_desc'] ?></td>
 								</tr>
 							</table>
-							<a href="<?php echo site_url('manage/training') ?>" class="btn btn-primary btn-sm">Back</a>
-							<a href="<?php echo site_url('manage/training/edit/'.$training['training_id']) ?>" class="btn btn-success btn-sm">Edit</a>
+							<a href="<?php echo site_url('manage/gallery') ?>" class="btn btn-primary btn-sm">Back</a>
+							<a href="<?php echo site_url('manage/gallery/edit/'.$gallery['gallery_id']) ?>" class="btn btn-success btn-sm">Edit</a>
 							<button type="button" data-target="#deleteModal" class="btn btn-sm btn-danger" data-toggle="modal">Delete</button>
 						</div>
 					</div>
@@ -63,8 +48,8 @@
 
 <div class="modal fade" id="deleteModal">
 	<div class="modal-dialog">
-		<form method="POST" action="<?php echo site_url('manage/training/delete/'.$training['training_id']) ?>">
-			<input type="hidden" name="training_id">
+		<form method="POST" action="<?php echo site_url('manage/gallery/delete/'.$gallery['gallery_id']) ?>">
+			<input type="hidden" name="gallery_id">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

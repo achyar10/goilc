@@ -8,6 +8,7 @@
 						<tr>
 							<th>No</th>
 							<th>Nama</th>
+							<th>Tanggal</th>
 							<th>Action</th>
 						</tr>
 						<tbody>
@@ -19,8 +20,10 @@
 									<tr>
 										<td><?php echo $i; ?></td>
 										<td><?php echo $row['gallery_name']; ?></td>
+										<td><?php echo pretty_date($row['gallery_date'],'d F Y',false); ?></td>
 										<td>
 											<a href="<?php echo site_url('manage/gallery/edit/'.$row['gallery_id']) ?>" class="btn btn-success btn-xs">Edit</a>
+											<a href="<?php echo site_url('manage/gallery/view/'.$row['gallery_id']) ?>" class="btn btn-info btn-xs">Lihat</a>
 										</td>
 									</tr>
 									<?php

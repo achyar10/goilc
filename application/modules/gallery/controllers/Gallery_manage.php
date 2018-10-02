@@ -59,6 +59,7 @@ class Gallery_manage extends CI_Controller {
 			$params['gallery_name'] = $this->input->post('gallery_name');
 			$params['gallery_place'] = $this->input->post('gallery_place');
 			$params['gallery_desc'] = $this->input->post('gallery_desc');
+			$params['gallery_date'] = $this->input->post('gallery_date');
 
 			$status = $this->Gallery_model->add($params);
 			$generate = date('Ymdhis');
