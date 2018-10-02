@@ -26,6 +26,14 @@
   <div class="menubar-scroll">
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
+
+        <li>
+          <a href="<?php echo site_url('home') ?>" target="_blank">
+            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <span class="menu-text">Lihat Website</span>
+          </a>
+        </li>
+
         <li class="<?php echo ($this->uri->segment(2) == 'dashboard' OR $this->uri->segment(2) == NULL) ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage') ?>">
             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
@@ -54,6 +62,20 @@
               <a href="<?php echo site_url('manage/service') ?>"><span class="menu-text">Daftar Pelayanan</span></a>
             </li>
           </ul>
+        </li>
+
+        <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/client') ?>">
+            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <span class="menu-text">Client</span>
+          </a>
+        </li>
+
+        <li class="<?php echo ($this->uri->segment(2) == 'gallery') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/gallery') ?>">
+            <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
+            <span class="menu-text">Gallery</span>
+          </a>
         </li>
 
 

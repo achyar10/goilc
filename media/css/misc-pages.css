@@ -1,6 +1,8 @@
 body.simple-page {
-  background-color: #FCCB11;
-  padding-top: 8%; }
+  /*background-color: #FCCB11;*/
+  background:linear-gradient(120deg, #ECF0F5 50%, #FCCB11 50%);
+  padding-top: 8%; 
+}
 
 .simple-page-wrap {
   width: 380px;

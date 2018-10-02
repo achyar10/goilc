@@ -20,7 +20,7 @@
     <div class="simple-page-logo animated swing">
       <a href="<?php echo site_url('manage') ?>">
         <img src="<?php echo media_url('img/logo.png') ?>">
-        <span>iLC Learning Center</span>
+        <span class="text-dark">iLC Learning Center</span>
       </a>
     </div><!-- logo -->
     <div class="simple-page-form animated flipInY" id="login-form">
