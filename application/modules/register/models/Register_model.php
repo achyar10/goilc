@@ -13,6 +13,10 @@ class Register_model extends CI_Model {
             $this->db->where('registers.training_id', $params['training_id']);
         }
 
+        if (isset($params['status'])) {
+            $this->db->where('registers.register_status', $params['status']);
+        }
+
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
                 $params['offset'] = NULL;
