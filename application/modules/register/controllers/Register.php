@@ -39,10 +39,16 @@ class Register extends CI_Controller {
 			$params['register_pay_jab'] = $this->input->post('register_pay_jab');
 			$params['register_pay_tlp'] = $this->input->post('register_pay_tlp');
 			$params['register_pay_fax'] = $this->input->post('register_pay_fax');
+			$params['register_pay_phone'] = $this->input->post('register_pay_phone');
 			$params['register_add_inv'] = $this->input->post('register_add_inv');
 			$params['training_id'] = $this->input->post('training_id');
 			$params['register_input_date'] = date('Y-m-d H:i:s');
 			$params['register_last_update'] = date('Y-m-d H:i:s');
+
+			echo "<pre>";
+			print_r ($params);
+			echo "</pre>";
+			die();
 
 			$status = $this->Register_model->add($params);
 
@@ -63,6 +69,7 @@ class Register extends CI_Controller {
 
 		} else {
 
+			$data['training'] = $this->Training_model->get();
 			$config['base_url'] = site_url('register/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
 			$data['title'] = 'Hubungi Kami';
