@@ -130,8 +130,8 @@
             <li class="<?php echo ($this->uri->segment(2) == 'setting') ? 'active' : '' ?>">
               <a href="<?php echo site_url('manage/setting') ?>"><span class="menu-text">Pengaturan Umum</span></a>
             </li>
-            <li class="<?php echo ($this->uri->segment(2) == 'recuitment') ? 'active' : '' ?>">
-              <a href="<?php echo site_url('manage/recuitment') ?>"><span class="menu-text">Karir</span></a>
+            <li class="<?php echo ($this->uri->segment(2) == 'recruitment') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/recruitment') ?>"><span class="menu-text">Karir</span></a>
             </li>
             <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>">
               <a href="<?php echo site_url('manage/client') ?>"><span class="menu-text">Client</span></a>

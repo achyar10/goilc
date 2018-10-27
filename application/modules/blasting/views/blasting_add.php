@@ -29,7 +29,7 @@ if (isset($blasting)) {
 
 					<div class="form-group">
 						<label>Judul</label>
-						<input name="blasting_title" type="text" class="form-control" value="<?php echo $inputNameValue ?>" placeholder="Nama Pelayanan">
+						<input name="blasting_title" type="text" class="form-control" value="<?php echo $inputNameValue ?>" placeholder="Judul">
 					</div>
 					<div class="form-group">
 						<label>Isi</label>
