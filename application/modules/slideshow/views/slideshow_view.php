@@ -2,16 +2,16 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="widget p-lg">
-				<h4 class="m-b-lg"><?php echo $blasting['blasting_title'] ?></h4>
+				<h4 class="m-b-lg"><?php echo $slideshow['slideshow_name'] ?></h4>
 				<hr>
-				<div class="text-justify">
-					<?php echo $blasting['blasting_letter'] ?>
+				<div class="">
+					<img src="<?php echo upload_url('slideshow/'.$slideshow['slideshow_image']) ?>" class="img-responsive img-thumbnail">
 					<br>
-					<p>Pembuat : <?php echo $blasting['user_full_name'] ?></p>
-					<p>Tanggal : <?php echo pretty_date($blasting['blasting_input_date'], 'd F Y H:i:s',false) ?></p>
+					<p>Pembuat : <?php echo $slideshow['user_full_name'] ?></p>
+					<p>Tanggal : <?php echo pretty_date($slideshow['slideshow_input_date'], 'd F Y H:i:s',false) ?></p>
 					<br>
-					<a href="<?php echo site_url('manage/blasting') ?>" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
-					<a href="<?php echo site_url('manage/blasting/edit/'.$blasting['blasting_id']) ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</a>
+					<a href="<?php echo site_url('manage/slideshow') ?>" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
+					<a href="<?php echo site_url('manage/slideshow/edit/'.$slideshow['slideshow_id']) ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</a>
 					<button type="button" data-target="#deleteModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash"></i> Delete</button>
 				</div>
 			</div>
@@ -21,8 +21,8 @@
 
 <div class="modal fade" id="deleteModal">
 	<div class="modal-dialog">
-		<form method="POST" action="<?php echo site_url('manage/blasting/delete/'.$blasting['blasting_id']) ?>">
-			<input type="hidden" name="blasting_id">
+		<form method="POST" action="<?php echo site_url('manage/slideshow/delete/'.$slideshow['slideshow_id']) ?>">
+			<input type="hidden" name="slideshow_id">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

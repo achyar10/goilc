@@ -7,6 +7,9 @@
 				<div class="text-justify">
 					<?php echo $recruitment['recruitment_letter'] ?>
 					<br>
+					<p>Pembuat : <?php echo $recruitment['user_full_name'] ?></p>
+					<p>Tanggal : <?php echo pretty_date($recruitment['recruitment_input_date'], 'd F Y H:i:s',false) ?></p>
+					<br>
 					<a href="<?php echo site_url('manage/recruitment') ?>" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
 					<a href="<?php echo site_url('manage/recruitment/edit/'.$recruitment['recruitment_id']) ?>" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</a>
 					<button type="button" data-target="#deleteModal" class="btn btn-sm btn-danger" data-toggle="modal"><i class="fa fa-trash"></i> Delete</button>
