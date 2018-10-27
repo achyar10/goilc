@@ -64,6 +64,18 @@
           </ul>
         </li>
 
+        <li class="<?php echo ($this->uri->segment(2) == 'blasting') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/blasting') ?>">
+            <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
+            <span class="menu-text">Blasting</span>
+          </a>
+        </li>
+        <li class="<?php echo ($this->uri->segment(2) == 'register') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/register') ?>">
+            <i class="menu-icon zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
+            <span class="menu-text">Pendaftaran</span>
+          </a>
+        </li>
         <li class="<?php echo ($this->uri->segment(2) == 'mailbox') ? 'active' : '' ?>"">
           <a href="<?php echo site_url('manage/mailbox') ?>">
             <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
@@ -71,18 +83,27 @@
           </a>
         </li>
 
-        <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>"">
-          <a href="<?php echo site_url('manage/client') ?>">
-            <i class="menu-icon zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
-            <span class="menu-text">Client</span>
+        <li class="<?php echo ($this->uri->segment(2) == 'subscriber') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/subscriber') ?>">
+            <i class="menu-icon zmdi zmdi-notifications-active zmdi-hc-lg"></i>
+            <span class="menu-text">Subscribers</span>
           </a>
         </li>
 
-        <li class="<?php echo ($this->uri->segment(2) == 'gallery') ? 'active' : '' ?>"">
-          <a href="<?php echo site_url('manage/gallery') ?>">
+        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'gallery' OR $this->uri->segment(2) == 'slideshow') ? 'active' : '' ?>">
+          <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon zmdi zmdi-picture-in-picture zmdi-hc-lg"></i>
-            <span class="menu-text">Gallery</span>
+            <span class="menu-text">Media</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
+          <ul class="submenu">
+            <li class="<?php echo ($this->uri->segment(2) == 'gallery') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/gallery') ?>"><span class="menu-text">Galeri</span></a>
+            </li>
+            <li class="<?php echo ($this->uri->segment(2) == 'slideshow') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/slideshow') ?>"><span class="menu-text">Slideshow</span></a>
+            </li>
+          </ul>
         </li>
 
 
@@ -95,6 +116,25 @@
           <ul class="submenu">
             <li class="<?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?>">
               <a href="<?php echo site_url('manage/users') ?>"><span class="menu-text">Users List</span></a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'setting' OR $this->uri->segment(2) == 'client') ? 'active' : '' ?>">
+          <a href="javascript:void(0)" class="submenu-toggle">
+            <i class="menu-icon zmdi zmdi-settings zmdi-hc-lg"></i>
+            <span class="menu-text">Pengaturan</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+          </a>
+          <ul class="submenu">
+            <li class="<?php echo ($this->uri->segment(2) == 'setting') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/setting') ?>"><span class="menu-text">Pengaturan Umum</span></a>
+            </li>
+            <li class="<?php echo ($this->uri->segment(2) == 'recuitment') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/recuitment') ?>"><span class="menu-text">Karir</span></a>
+            </li>
+            <li class="<?php echo ($this->uri->segment(2) == 'client') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/client') ?>"><span class="menu-text">Client</span></a>
             </li>
           </ul>
         </li>

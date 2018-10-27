@@ -80,6 +80,9 @@ class Training_manage extends CI_Controller {
 			if (!empty($_FILES['training_brocure']['name'])) {
 				$paramsupdate['training_brocure'] = $this->do_upload($name = 'training_brocure', $fileName=$generate );
 			}
+			if (!empty($_FILES['training_silabus']['name'])) {
+				$paramsupdate['training_silabus'] = $this->do_upload_file($name = 'training_silabus', $fileName='S_'.$generate );
+			}
 
 			$paramsupdate['training_id'] = $status;
 			$this->Training_model->add($paramsupdate);
@@ -129,6 +132,31 @@ class Training_manage extends CI_Controller {
 		}
 
 		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['max_size'] = '54000';
+		$config['file_name'] = $fileName;
+		$this->upload->initialize($config);
+
+		if (!$this->upload->do_upload($name)) {
+			$this->session->set_flashdata('success', $this->upload->display_errors('', ''));
+			redirect(uri_string());
+		}
+
+		$upload_data = $this->upload->data();
+
+		return $upload_data['file_name'];
+	}
+
+	function do_upload_file($name=NULL, $fileName=NULL) {
+		$this->load->library('upload');
+
+		$config['upload_path'] = FCPATH . 'uploads/silabus/';
+
+		/* create directory if not exist */
+		if (!is_dir($config['upload_path'])) {
+			mkdir($config['upload_path'], 0777, TRUE);
+		}
+
+		$config['allowed_types'] = 'pdf|doc|docx|ppt|pptx';
 		$config['max_size'] = '54000';
 		$config['file_name'] = $fileName;
 		$this->upload->initialize($config);

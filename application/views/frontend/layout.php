@@ -60,16 +60,16 @@
 
   <div class="contactdetail-block">
     <div class="container">
-  <div class="section-header">
-    <h3>Client <span>Kami</span></h3>
-      <?php foreach($result as $row): ?>
-        <div class="col-md-2 col-sm-2 col-xs-2 contactinfo-box">
-          <img src="<?php echo upload_url('client/'.$row['client_image']) ?>" class="img-responsive">
-        </div>
-      <?php endforeach; ?>
+      <div class="section-header">
+        <h3>Client <span>Kami</span></h3>
+        <?php foreach($result as $row): ?>
+          <div class="col-md-2 col-sm-2 col-xs-2 contactinfo-box">
+            <img src="<?php echo upload_url('client/'.$row['client_image']) ?>" class="img-responsive">
+          </div>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
-</div>
 
   <footer class="footer-main footer2 container-fluid no-padding"> 
     <div class="container">
@@ -95,10 +95,14 @@
           <aside class="ftr-widget newsletter_widget">
             <h3 class="widget-title">News Letters</h3>
             <p>Jadwal Pelatihan Agar Anda selalu Update Dengan Program Yang Kami sediakan</p>
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Enter your email">
-              <span class="input-group-btn"><button class="btn" type="button" title="Go"><i class="icon icon-Plaine"></i></button></span>
-            </div>
+            <form action="<?php echo site_url('home') ?>" method="POST">
+              <div class="input-group">
+                <input type="email" name="subscriber_email" class="form-control" placeholder="Enter your email">
+                <span class="input-group-btn">
+                  <button class="btn" type="submit" title="Go"><i class="icon icon-Plaine"></i></button>
+                </span>
+              </div>
+            </form>
             <ul>
               <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
               <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>

@@ -1,5 +1,5 @@
 <?php
- $this->load->view('manage/tinymce_init');
+$this->load->view('manage/tinymce_init');
 if (isset($training)) {
 	$id 						= $training['training_id'];
 	$inputNameValue = $training['training_name'];
@@ -104,9 +104,9 @@ if (isset($training)) {
 					</div>
 
 					<div class="form-group">
-							<label>Cover Letter</label>
-							<textarea name="training_cover_letter" rows="10" class="mce-init"><?php echo $inputCoverValue; ?></textarea>
-						</div>
+						<label>Cover Letter</label>
+						<textarea name="training_cover_letter" rows="10" class="mce-init"><?php echo $inputCoverValue; ?></textarea>
+					</div>
 
 				</div>
 			</div>
@@ -124,6 +124,13 @@ if (isset($training)) {
 							<?php } ?>
 						</a>
 						<input type='file' id="training_brocure" name="training_brocure">
+					</div>
+					<div class="form-group">
+						<label>Silabus</label><br>
+						<?php if(isset($training)) { ?>
+							<a href="<?php echo upload_url('silabus/'.$training['training_silabus']) ?>"><?php echo $training['training_silabus'] ?></a>
+						<?php } ?>
+						<input type="file" name="training_silabus">
 					</div>
 					<div class="form-group">
 						<label>Keterangan</label>

@@ -93,6 +93,10 @@ class Training_model extends CI_Model {
             $this->db->set('training_cover_letter', $data['training_cover_letter']);
         }
 
+        if (isset($data['training_silabus'])) {
+            $this->db->set('training_silabus', $data['training_silabus']);
+        }
+
         if (isset($data['training_status'])) {
             $this->db->set('training_status', $data['training_status']);
         }

@@ -37,7 +37,7 @@
 								<tr>
 									<td>Waktu Pelatihan</td>
 									<td>:</td>
-									<td><?php echo $training['training_time'] ?></td>
+									<td><?php echo $training['training_time']. ' WIB' ?></td>
 								</tr>
 								<tr>
 									<td>Harga</td>
