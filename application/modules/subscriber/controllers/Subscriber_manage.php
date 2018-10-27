@@ -49,6 +49,51 @@ class Subscriber_manage extends CI_Controller {
 		$this->load->view('manage/layout', $data);
 	}
 
+	public function import() {
+		if ($_POST) {
+			$rows= explode("\n", $this->input->post('rows'));
+			$success = 0;
+			$failled = 0;
+			$exist = 0;
+			foreach($rows as $row) {
+				$exp = explode("\t", $row);
+				if (count($exp) != 1) continue;
+				$arr = [
+					'subscriber_email' => trim($exp[0]),
+					'subscriber_input_date' => date('Y-m-d H:i:s'),
+					'subscriber_last_update' => date('Y-m-d H:i:s')
+				];
+				$check = $this->db
+				->where('subscriber_email', trim($exp[0]))
+				->count_all_results('subscribers');
+				if ($check == 0) {
+					if ($this->db->insert('subscribers', $arr)) {
+						$success++;
+					} else {
+						$failled++;
+					}
+				} else {
+					$exist++;
+				}
+			}
+			$msg = 'Sukses : ' . $success. ' baris, Gagal : '. $failled .', Duplikat : ' . $exist;
+			$this->session->set_flashdata('success', $msg);
+			redirect('manage/subscriber/import');
+		} else {
+			$data['title'] = 'Import Data Subscriber';
+			$data['main'] = 'subscriber/subscriber_upload';
+			$data['action'] = site_url(uri_string());
+			$this->load->view('manage/layout', $data);
+		}
+	}
+
+	public function download() {
+		$data = file_get_contents("./media/template_excel/Template_Data_Subscriber.xlsx");
+		$name = 'Template_Data_Subscriber.xlsx';
+		$this->load->helper('download');
+		force_download($name, $data);
+	}
+
 }
 
 /* End of file Subscriber_manage.php */

@@ -44,3 +44,16 @@ if (isset($category)) {
 		</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+	$('form').submit(function(event) {
+		if ($(this).hasClass('submitted')) {
+			event.preventDefault();
+		} else {
+			$(this).find(':submit')
+			.html('<i class="fa fa-spinner fa-spin"></i> Loading...')
+			.attr('disabled', 'disabled');
+			$(this).addClass('submitted');
+		}
+	});
+</script>

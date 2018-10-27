@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="widget p-lg">
-				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/blasting/add') ?>" class="btn btn-warning btn-sm pull-right">Tambah Blasting</a></h4>
+				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/blasting/add') ?>" class="btn btn-warning btn-sm pull-right"><i class="fa fa-plus"></i> Tambah Blasting</a></h4>
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<tr>
@@ -24,8 +24,9 @@
 										<td><?php echo pretty_date($row['blasting_input_date'],'d F Y',false); ?></td>
 										<td><label class="label <?php echo ($row['blasting_status']==0) ? 'label-warning' : 'label-success' ?>"><?php echo ($row['blasting_status']==0) ? 'Belum Kirim' : 'Sudah Kirim' ?></label></td>
 										<td>
-											<a href="<?php echo site_url('manage/blasting/edit/'.$row['blasting_id']) ?>" class="btn btn-success btn-xs">Edit</a>
-											<a href="<?php echo site_url('manage/blasting/send_blasting/'.$row['blasting_id']) ?>" class="btn btn-danger btn-xs">Blasting</a>
+											<a href="<?php echo site_url('manage/blasting/view/'.$row['blasting_id']) ?>" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Lihat</a>
+											<a href="<?php echo site_url('manage/blasting/edit/'.$row['blasting_id']) ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+											<a href="<?php echo site_url('manage/blasting/send_blasting/'.$row['blasting_id']) ?>" class="btn btn-danger btn-xs"><i class="fa fa-envelope"></i> Blasting</a>
 										</td>
 									</tr>
 									<?php

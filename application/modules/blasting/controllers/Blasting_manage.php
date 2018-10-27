@@ -9,7 +9,7 @@ class Blasting_manage extends CI_Controller {
 		if ($this->session->userdata('logged') == NULL) {
 			header("Location:" . site_url('manage/auth/login') . "?location=" . urlencode($_SERVER['REQUEST_URI']));
 		}
-		$this->load->model(array('blasting/Blasting_model', 'subscribe/Subscribe_model'));
+		$this->load->model(array('blasting/Blasting_model', 'subscriber/Subscriber_model'));
 	}
 
 	public function index($offset = NULL) {
@@ -100,11 +100,15 @@ class Blasting_manage extends CI_Controller {
 	function send_blasting($id = NULL) {
 		$this->load->config('email'); 
 		$this->load->library('email');
+		$this->Blasting_model->add(array(
+			'blasting_id' => $id,
+			'blasting_status' => 1
+		));
+		$data['blasting'] = $this->Blasting_model->get(array('id' => $id));
 		if($this->config->item('email'))
 		{   
 
-			$subscribe = $this->Subscribe_model->get();
-			$data['blasting'] = $this->Blasting_model->get(array('id' => $id));
+			$subscribe = $this->Subscriber_model->get();
 			$i = 0;
 			foreach ($subscribe as $key) {
 				$email_subscribe[$i] = $key['subscriber_email'];
@@ -114,9 +118,12 @@ class Blasting_manage extends CI_Controller {
 			$this->email->from($this->config->item('from'), $this->config->item('from_name'));
 			$this->email->bcc($email_subscribe); 
 			$this->email->subject($data['blasting']['blasting_title']);
-			$this->email->message($this->load->view('email/blasting_email', array('params' => $params), true));
+			$message = $this->load->view('email/blasting_email', $data, TRUE);
+			$this->email->message($message);
 			$this->email->send();
 		}
+		$this->session->set_flashdata('success', 'blasting success');
+			redirect('manage/blasting');
 	}
 
 
