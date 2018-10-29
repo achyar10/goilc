@@ -33,7 +33,7 @@ class Register_model extends CI_Model {
 
         $this->db->select('*');
 
-        $this->db->join('members', 'members.member_id = registers.member_id','right');
+        $this->db->join('members', 'members.register_id = registers.register_id','right');
         $this->db->join('trainings', 'trainings.training_id = registers.training_id','left');
 
         $res = $this->db->get('registers');
@@ -130,6 +130,42 @@ class Register_model extends CI_Model {
 
         $status = $this->db->affected_rows();
         return ($status == 0) ? FALSE : $id;
+    }
+
+    function get_member($params = array()) {
+
+        if (isset($params['id'])) {
+            $this->db->where('members.member_id', $params['id']);
+        }
+
+        if (isset($params['register_id'])) {
+            $this->db->where('members.register_id', $params['register_id']);
+        }
+
+        if (isset($params['limit'])) {
+            if (!isset($params['offset'])) {
+                $params['offset'] = NULL;
+            }
+
+            $this->db->limit($params['limit'], $params['offset']);
+        }
+
+        if (isset($params['order_by'])) {
+            $this->db->order_by($params['order_by'], 'desc');
+        } else {
+            $this->db->order_by('member_id', 'desc');
+        }
+
+        $this->db->select('*');
+        $this->db->join('registers', 'members.register_id = registers.register_id','left');
+
+        $res = $this->db->get('members');
+
+        if (isset($params['id'])) {
+            return $res->row_array();
+        } else {
+            return $res->result_array();
+        }
     }
 
     function add_member($data = array()) {

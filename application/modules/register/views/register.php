@@ -97,7 +97,7 @@
 								</div>	
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<a type="button" class="btn btn-success btn-next btnNext">Next <i class="fa fa-arrow-right"></i></a>
+										<a type="button" class="btn btn-success btnNext">Next <i class="fa fa-arrow-right"></i></a>
 									</div>
 								</div>
 							</div>

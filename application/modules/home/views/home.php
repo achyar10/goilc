@@ -1,3 +1,8 @@
+<style type="text/css">
+  a{
+    color:#fff;
+  }
+</style>
 <div class="photoslider-section container-fluid no-padding">
   <div id="home-slider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner" role="listbox">
@@ -9,7 +14,6 @@
               <h4 data-animation="animated bounceInLeft">Welcome</h4>
               <h3 data-animation="animated fadeInDown">To Our<span>University</span></h3>
               <p data-animation="animated bounceInRight">We belive nothing is more important than education. The best learning institution</p>
-              <a href="#" title="Learn More" data-animation="animated zoomInUp">Learn More</a>
             </div>
           </div>
         </div>
@@ -22,7 +26,6 @@
               <h4 data-animation="animated bounceInLeft">Welcome</h4>
               <h3 data-animation="animated fadeInDown">To Our<span>University</span></h3>
               <p data-animation="animated bounceInRight">We belive nothing is more important than education. The best learning institution</p>
-              <a href="#" title="Learn More" data-animation="animated zoomInUp">Learn More</a>
             </div>
           </div>
         </div>
@@ -40,82 +43,31 @@
 <div class="container welcome-section">
   <div class="section-padding"></div>
   <div class="section-header">
-    <h3>Pelatihan <span>Courses</span></h3>
+    <h3>Pelatihan <span>Terbaru</span></h3>
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
   </div>
   <div class="row">
-    <div class="col-md-4 col-sm-6 col-xs-6">
-      <div class="welcome-box">
-        <img src="<?php echo media_url('frontend/images/welcome1.jpg') ?>" alt="welcome1" width="370" height="440"/>
-        <div class="welcome-title">
-          <h3>Political science</h3>
-        </div>  
-        <div class="welcome-content">
-          <span>(Peter Parker)</span>
-          <p>Then one day he was shootinsome  When the against him bubblin</p>
-          <ul class="course-detail">
-            <li><i class="fa fa-calendar" aria-hidden="true"></i>Course duration : <span>3 Yr</span></li>
-            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>Degree Level : <span>Master’s Degree</span></li>
-          </ul>
-          <ul class="course-rating">
-            <li><a href="#" title="1 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="2 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="3 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="4 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="5 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-          </ul>
-          <a href="coursesdetails-page.html" title="Apply now">Apply now</a>
+    <?php foreach($training as $row): ?>
+      <div class="col-md-4 col-sm-6 col-xs-6">
+        <div class="welcome-box">
+          <div class="imgLiquidFill imgLiquid" style="width:auto; height:300px;">
+            <img src="<?php echo upload_url('training/'.$row['training_brocure']) ?>">
+          </div>
+          <div class="welcome-title">
+            <h3><a href="<?php echo site_url('regtraining/'.$row['training_id']) ?>"><?php echo $row['training_name'] ?></a></h3>
+          </div>  
+          <div class="welcome-content">
+            <br>
+            <ul class="course-detail">
+              <li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
+              <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']) ?></span></li>
+              <li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
+            </ul>
+            <a href="<?php echo site_url('register/regtraining/'.$row['training_id']) ?>">Register</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-4 col-sm-6 col-xs-6">
-      <div class="welcome-box">
-        <img src="<?php echo media_url('frontend/images/welcome2.jpg') ?>" alt="welcome2" width="370" height="440"/>
-        <div class="welcome-title">
-          <h3>Micro Biology</h3>
-        </div>  
-        <div class="welcome-content">
-          <span>(Peter Parker)</span>
-          <p>Then one day he was shootinsome  When the against him bubblin</p>
-          <ul class="course-detail">
-            <li><i class="fa fa-calendar" aria-hidden="true"></i>Course duration : <span>3 Yr</span></li>
-            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>Degree Level : <span>Master’s Degree</span></li>
-          </ul>
-          <ul class="course-rating">
-            <li><a href="#" title="1 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="2 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="3 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="4 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="5 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-          </ul>
-          <a href="coursesdetails-page.html" title="Apply now">Apply now</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 col-sm-6 col-xs-6">
-      <div class="welcome-box">
-        <img src="<?php echo media_url('frontend/images/welcome3.jpg') ?>" alt="welcome3" width="370" height="440"/>
-        <div class="welcome-title">
-          <h3>Computer Science</h3>
-        </div>  
-        <div class="welcome-content">
-          <span>(Peter Parker)</span>
-          <p>Then one day he was shootinsome  When the against him bubblin</p>
-          <ul class="course-detail">
-            <li><i class="fa fa-calendar" aria-hidden="true"></i>Course duration : <span>3 Yr</span></li>
-            <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>Degree Level : <span>Master’s Degree</span></li>
-          </ul>
-          <ul class="course-rating">
-            <li><a href="#" title="1 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="2 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="3 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="4 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-            <li><a href="#" title="5 Star"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-          </ul>
-          <a href="coursesdetails-page.html" title="Apply now">Apply now</a>
-        </div>
-      </div>
-    </div>
+    <?php endforeach; ?>
   </div>
   <div class="section-padding"></div>
 </div><!-- Welcome Section /- -->

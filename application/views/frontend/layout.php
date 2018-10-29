@@ -47,29 +47,11 @@
       </div>
     </div>
   </div> 
-  <?php 
-  $CI = & get_instance();
-  $CI->load->model('client/Client_model');
-  $result = $CI->Client_model->get();
-  ?>
   <!-- Header -->
   <?php $this->load->view('frontend/header') ?>
   <!-- Header -->
 
   <?php isset($main) ? $this->load->view($main) : null; ?>
-
-  <!-- <div class="contactdetail-block">
-    <div class="container">
-      <div class="section-header">
-        <h3>Client <span>Kami</span></h3>
-        <?php foreach($result as $row): ?>
-          <div class="col-md-2 col-sm-2 col-xs-2 contactinfo-box">
-            <img src="<?php echo upload_url('client/'.$row['client_image']) ?>" class="img-responsive">
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </div> -->
 
   <footer class="footer-main footer2 container-fluid no-padding"> 
     <div class="container">
@@ -121,11 +103,27 @@
   </footer>
 
   <!-- Library - Js -->
+  <script src="<?php echo media_url('js/imgLiquid.js') ?>"></script>
   <script src="<?php echo media_url('js/jquery.toast.js') ?>"></script>
   <script src="<?php echo media_url('frontend/libraries/lib.js') ?>"></script><!-- Bootstrap JS File v3.3.5 -->
 
   <!-- Library - Theme JS -->
   <script src="<?php echo media_url('frontend/js/functions.js') ?>"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $(".imgLiquidFill").imgLiquid({
+        fill: true,
+        horizontalAlign: "center",
+        verticalAlign: "top"
+      });    
+      $(".imgLiquidNoFill").imgLiquid({
+        fill: false,
+        horizontalAlign: "center",
+        verticalAlign: "50%"
+      });
+    });
+  </script>
 
   <?php if ($this->session->flashdata('success')) { ?>
     <script>
