@@ -58,7 +58,7 @@
 
   <?php isset($main) ? $this->load->view($main) : null; ?>
 
-  <div class="contactdetail-block">
+  <!-- <div class="contactdetail-block">
     <div class="container">
       <div class="section-header">
         <h3>Client <span>Kami</span></h3>
@@ -69,31 +69,31 @@
         <?php endforeach; ?>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <footer class="footer-main footer2 container-fluid no-padding"> 
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-6">
           <aside class="ftr-widget about_widget">
-            <h3 class="widget-title">PT INOVASI LENTERA CIPTA KREASI</h3>
-            <p><span class="icon icon-Plaine"></span>Gedung Senayan Trade Center [ STC ] Senayan Lt. 4 No. 69 A, Jl. Asia Afrika, Senayan, Jakarta Pusat 10270.</p>
-            <p><span class="icon icon-Phone2"></span>Phone : <a title="57939389" href="tel:+57939389">(021) 5793-9389</a></p>
-            <p><span class="icon icon-Fax"></span>Fax : <a title="57939389" href="#">(021) 2954-3463</a></p>
-            <p><span class="icon icon-Mail"></span>Email : <a title="info@goilc.co.id" href="mailto:info@goilc.co.id">info@goilc.co.id</a></p>
+            <h3 class="widget-title"><?php echo name_of_pt() ?></h3>
+            <p><span class="icon icon-Plaine"></span><?php echo address() ?></p>
+            <p><span class="icon icon-Phone2"></span>Phone : <a href="#"><?php echo phone() ?></a></p>
+            <p><span class="icon icon-Fax"></span>Fax : <a href="#"><?php echo fax() ?></a></p>
+            <p><span class="icon icon-Mail"></span>Email : <a title="<?php echo email() ?>" href="mailto:<?php echo email() ?>"><?php echo email() ?></a></p>
           </aside>
         </div>
         <div class="col-md-4 col-sm-6"> 
           <aside class="ftr-widget about_widget">
-            <h3 class="widget-title">Contact Support</h3>
-            <p><span class="icon icon-User"></span>Rahma Yuniarti : <a title="087885818700" href="tel:+087885818700">0878-8581-8700</a></p>
-            <p><span class="icon icon-User"></span>Ade Septiani : <a title="081511653822" href="tel:+081511653822">0815-1165-3822</a></p>
+            <h3 class="widget-title">CONTACT SUPPORT</h3>
+            <p><a target="_blank" href="http://api.whatsapp.com/send?phone=6287885818700"><span class="icon icon-User"></span>Rahma Yuniarti : 0878-8581-8700</a></p>
+            <p><a target="_blank" href="http://api.whatsapp.com/send?phone=6281511653822"><span class="icon icon-User"></span>Ade Septiani : 0815-1165-3822</a></p>
           </aside>
         </div>
         
         <div class="col-md-4 col-sm-6">
           <aside class="ftr-widget newsletter_widget">
-            <h3 class="widget-title">News Letters</h3>
+            <h3 class="widget-title">SUBSCRIBE</h3>
             <p>Jadwal Pelatihan Agar Anda selalu Update Dengan Program Yang Kami sediakan</p>
             <form action="<?php echo site_url('home') ?>" method="POST">
               <div class="input-group">
@@ -104,11 +104,10 @@
               </div>
             </form>
             <ul>
-              <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li> 
-              <li><a href="#" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-              <li><a href="#" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+              <li><a href="<?php echo (facebook()!= '-') ? facebook() : '#' ?>"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="<?php echo (twitter()!= '-') ? twitter() : '#' ?>"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="<?php echo (linkedin()!= '-') ? linkedin() : '#' ?>"><i class="fa fa-linkedin"></i></a></li> 
+              <li><a href="<?php echo (instagram()!= '-') ? instagram() : '#' ?>"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </aside>
         </div>
@@ -117,24 +116,6 @@
         <div class="copyright no-padding">
           <span>Copyright &copy; <?php echo date('Y') ?>. All Rights Reserved.</span>
         </div>
-        <nav class="navbar ow-navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar2" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="<?php echo site_url('home') ?>" title="Beranda">Beranda</a></li>
-              <li><a href="<?php echo site_url('activity') ?>" title="Kegiatan">Kegiatan</a></li>
-              <li><a href="<?php echo site_url('about') ?>" title="Tentang Kami">Tentang Kami</a></li>
-              <li><a href="<?php echo site_url('contact') ?>" title="Blog">Hubungi Kami</a></li>
-            </ul>
-          </div>
-        </nav>
       </div>
     </div>
   </footer>

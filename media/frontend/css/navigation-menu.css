@@ -76,22 +76,23 @@
 
 /* -- Navbar Fixed */
 .menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav li > a{
-	color: #fff;
+	color: #000;
 }
 .menu-block.navbar-fixed-top .ow-navigation .nav.navbar-nav li.active > a{
 	color: #ffc722;
 }
 .menu-block.navbar-fixed-top .ow-navigation .dropdown .dropdown-menu li a{
-	color: #fff;
+	color: #000;
 	margin: 0;
 }
 
 /* -- min-width: 992 */
 @media (min-width: 992px) {	
 	.menu-block.navbar-fixed-top {
-		background-color: #333;
+		background-color: #fff;
 		padding-top: 0;
 		padding-bottom: 0;
+		box-shadow: 0px 1px 10px #999;
 	}
 	.navbar-fixed-top .ow-navigation .nav.navbar-nav li > a{
 		margin-top: 31px;
@@ -102,7 +103,7 @@
 	}
 	.menu-block.navbar-fixed-top .ow-navigation .navbar-brand{
 		top: -18px;
-		color: #fff;
+		color: #000;
 	}
 	.menu-block.navbar-fixed-top .navbar-collapse {
 		margin-top: -8px;
@@ -184,7 +185,7 @@
 		-webkit-transition: all 1s ease 0s;
 		-moz-transition: all 1s ease 0s;
 		-o-transition: all 1s ease 0s;
-		color: #fff;
+		color: #000;
 		font-size: 13px;
 		letter-spacing: 0.28px;
 		line-height: 26px;
@@ -268,7 +269,8 @@
 /* -- max-width: 991 */
 @media (max-width: 991px) {
 	.menu-block.navbar-fixed-top {
-		background-color: #333;
+		background-color: #fff;
+		box-shadow: 0px 1px 10px #999;
 	}
 	.menu-block.navbar-fixed-top .ow-navigation .navbar-brand,
 	.ow-navigation .navbar-brand {
@@ -279,7 +281,7 @@
 	}	
 	a.mobile-logo {
 		text-decoration: none;
-		color: #333;
+		color: #fff;
 		text-transform: uppercase;
 	}
 	.mobile-logo h3{

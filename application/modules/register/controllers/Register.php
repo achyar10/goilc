@@ -24,10 +24,12 @@ class Register extends CI_Controller {
 		if ($_POST AND $this->form_validation->run() == TRUE) {
 
 			$data['training'] = $this->Training_model->get();
+			$noreg = date('Ymdhis') . random_string('numeric', 4);
 
 			if ($this->input->post('register_id')) {
 				$params['register_id'] = $id;
 			} 
+			$params['register_no'] = $noreg;
 			$params['register_corporate'] = $this->input->post('register_corporate');
 			$params['register_pic_name'] = $this->input->post('register_pic_name');
 			$params['register_pic_email'] = $this->input->post('register_pic_email');
@@ -44,11 +46,6 @@ class Register extends CI_Controller {
 			$params['training_id'] = $this->input->post('training_id');
 			$params['register_input_date'] = date('Y-m-d H:i:s');
 			$params['register_last_update'] = date('Y-m-d H:i:s');
-
-			echo "<pre>";
-			print_r ($params);
-			echo "</pre>";
-			die();
 
 			$status = $this->Register_model->add($params);
 
@@ -72,10 +69,17 @@ class Register extends CI_Controller {
 			$data['training'] = $this->Training_model->get();
 			$config['base_url'] = site_url('register/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-			$data['title'] = 'Hubungi Kami';
+			$data['title'] = 'Pendaftaran';
 			$data['main'] = 'register/register';
 			$this->load->view('frontend/layout', $data);
 		}
+	}
+
+	function reg_success($id = NULL) {
+		
+		$data['title'] = 'Pendaftaran';
+		$data['main'] = 'register/register_success';
+		$this->load->view('frontend/layout', $data);
 	}
 
 }

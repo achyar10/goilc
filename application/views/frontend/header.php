@@ -3,12 +3,12 @@
   <div class="top-header container-fluid no-padding">
     <div class="container">
       <div class="topheader-left">
-        <a href="tel:+57939389" title="57939389"><i class="fa fa-mobile" aria-hidden="true"></i>(021) - 5793 - 9389 </a>
-        <a href="mailto:Support@info.com" title="Support@info.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: info@goilc.co.id</a>
+        <a href="tel:+57939389" title="57939389"><i class="fa fa-mobile" aria-hidden="true"></i><?php echo phone() ?> </a>
+        <a href="mailto:<?php echo email() ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: <?php echo email() ?></a>
       </div>
       <div class="topheader-right">
         <a href="<?php echo site_url('manage') ?>" title="Login"><i class="fa fa-sign-out" aria-hidden="true"></i>Login</a>
-        <a href="<?php echo site_url('register') ?>">Register Pelatihan</a>
+        <a href="<?php echo site_url('register') ?>">Register</a>
       </div>
     </div>
   </div><!-- Top Header /- -->
@@ -28,24 +28,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top: 15px; ;height: 80px;" alt="logo" class="">
+              <img src="<?php echo media_url('img/logo.png') ?>" style="height: 50px;" alt="logo" class="hidden-lg hidden-sm hidden-md">
+              <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top:15px;height: 80px;" alt="logo" class="hidden-xs">
             </div>
           </div>
           <div class="col-md-9">
             <div class="navbar-collapse collapse" id="navbar">
               <ul class="nav navbar-nav menubar">
-               <li><a title="Contact" href="<?php echo site_url('home') ?>">Beranda</a></li>
-               <li><a title="Contact" href="<?php echo site_url('activity') ?>">Kegiatan</a></li>
+               <li><a title="Contact" href="<?php echo site_url('home') ?>">Home</a></li>
+               <li><a title="Contact" href="<?php echo site_url('activity') ?>">Activity</a></li>
 
                <li class="dropdown">
-                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Layanan Kami</a>
+                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Service</a>
                 <i class="ddl-switch fa fa-angle-down"></i>
                 <ul class="dropdown-menu">
-                  <li><a title="Home 2" href="<?php echo site_url('training') ?>">Pelatihan</a></li>
+                  <li><a title="Home 2" href="<?php echo site_url('training') ?>">Training</a></li>
                 </ul>
               </li>
-              <li><a title="Contact" href="<?php echo site_url('about') ?>">Tentang Kami</a></li>
-              <li><a title="Contact" href="<?php echo site_url('contact') ?>">Hubungi Kami</a></li>
+              <li><a title="Contact" href="<?php echo site_url('about') ?>">About Us</a></li>
+              <li><a title="Contact" href="<?php echo site_url('contact') ?>">Contact Us</a></li>
             </ul>
           </div>
         </div>

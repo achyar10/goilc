@@ -793,8 +793,8 @@ a {
 	background-color: #232323;	
 }
 .footer-main .row {
-	padding-top: 88px;
-	padding-bottom: 48px;
+	padding-top: 70px;
+	/*padding-bottom: 48px;*/
 }
 .ftr-widget{
 	margin-bottom: 27px;
@@ -1161,7 +1161,7 @@ a.footer-logo{
 	background-color: #242424;
 }
 .footer2.footer-main .row{
-	padding-bottom: 55px;
+	/*padding-bottom: 55px;*/
 }
 .footer2 .about_widget {
 	padding-right: 0;

@@ -90,6 +90,69 @@ function getCell($cell) {
     return $result;
 }
 
+function name_of_pt() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 1));
+    return $result['setting_value'];
+}
+
+function address() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 2));
+    return $result['setting_value'];
+}
+
+function phone() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 3));
+    return $result['setting_value'];
+}
+
+function fax() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 4));
+    return $result['setting_value'];
+}
+
+function email() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 5));
+    return $result['setting_value'];
+}
+
+function linkedin() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 6));
+    return $result['setting_value'];
+}
+
+function facebook() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 7));
+    return $result['setting_value'];
+}
+
+function twitter() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 8));
+    return $result['setting_value'];
+}
+
+function instagram() {
+    $CI = & get_instance();
+    $CI->load->model('setting/Setting_model');
+    $result = $CI->Setting_model->get(array('id' => 9));
+    return $result['setting_value'];
+}
+
 if ( ! function_exists('visualisation_url'))
 {
     function visualisation_url($visualisation = array())

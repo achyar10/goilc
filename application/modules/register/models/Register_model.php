@@ -51,6 +51,10 @@ class Register_model extends CI_Model {
             $this->db->set('register_id', $data['register_id']);
         }
 
+        if (isset($data['register_no'])) {
+            $this->db->set('register_no', $data['register_no']);
+        }
+
         if (isset($data['register_corporate'])) {
             $this->db->set('register_corporate', $data['register_corporate']);
         }
