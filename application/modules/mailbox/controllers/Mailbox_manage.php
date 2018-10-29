@@ -43,6 +43,11 @@ class Mailbox_manage extends CI_Controller {
 	}
 
 	public function view($id = NULL) {
+		$this->Mailbox_model->add(array(
+			'mailbox_id' => $id,
+			'mailbox_status'=>1,
+			'mailbox_last_update' => date('Y-m-d H:i:s')
+		));
 		$data['mailbox'] = $this->Mailbox_model->get(array('id' => $id));
 		$data['title'] = 'Mailbox Detail';
 		$data['main'] = 'mailbox/mailbox_view';

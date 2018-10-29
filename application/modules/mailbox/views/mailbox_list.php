@@ -10,6 +10,7 @@
 							<th>Nama</th>
 							<th>Email</th>
 							<th>Perusahaan</th>
+							<th>Keterangan</th>
 							<th>Action</th>
 						</tr>
 						<tbody>
@@ -23,6 +24,7 @@
 										<td><?php echo $row['mailbox_name']; ?></td>
 										<td><?php echo $row['mailbox_email']; ?></td>
 										<td><?php echo $row['mailbox_corporate']; ?></td>
+										<td><?php echo ($row['mailbox_status']==0) ? '<label class="label label-warning">Belum dibaca</label>' : '<label class="label label-success">Sudah dibaca</label>' ?></td>
 										<td>
 											<a href="<?php echo site_url('manage/mailbox/view/'.$row['mailbox_id']) ?>" class="btn btn-success btn-xs">Lihat</a>
 										</td>

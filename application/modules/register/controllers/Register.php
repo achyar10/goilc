@@ -133,7 +133,9 @@ class Register extends CI_Controller {
 	}
 
 	function reg_success($id = NULL) {
-		
+		if ($id == NULL) {
+			redirect('home','refresh');
+		}
 		$data['register'] = $this->Register_model->get(array('id'=>$id));
 		$data['title'] = 'Pendaftaran';
 		$data['main'] = 'register/register_success';
@@ -146,7 +148,7 @@ class Register extends CI_Controller {
 
 		$this->load->helper('dompdf');
 		$html = $this->load->view('register/register_pdf', $data, true);
-		$data = pdf_create($html, 'Form Pendaftaran', 'A4');
+		$data = pdf_create($html, $data['register']['register_corporate'].'_'.$data['register']['register_no'], 'A4');
 	}
 
 }

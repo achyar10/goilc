@@ -9,6 +9,10 @@ class Blasting_model extends CI_Model {
 			$this->db->where('blastings.blasting_id', $params['id']);
 		}
 
+		if (isset($params['status'])) {
+			$this->db->where('blastings.blasting_status', $params['status']);
+		}
+
 		if (isset($params['limit'])) {
 			if (!isset($params['offset'])) {
 				$params['offset'] = NULL;

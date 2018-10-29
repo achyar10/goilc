@@ -169,5 +169,26 @@ if ( ! function_exists('infografis_url'))
     }
 }
 
+function notif_reg() {
+    $CI = & get_instance();
+    $CI->load->model('register/Register_model');
+    $result = count($CI->Register_model->get_reg(array('status' => 0)));
+    return $result;
+}
+
+function notif_mail() {
+    $CI = & get_instance();
+    $CI->load->model('mailbox/Mailbox_model');
+    $result = count($CI->Mailbox_model->get(array('status' => 0)));
+    return $result;
+}
+
+function notif_blast() {
+    $CI = & get_instance();
+    $CI->load->model('blasting/Blasting_model');
+    $result = count($CI->Blasting_model->get(array('status' => 0)));
+    return $result;
+}
+
 
 ?>

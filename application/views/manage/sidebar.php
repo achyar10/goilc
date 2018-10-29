@@ -15,7 +15,7 @@
           <h5><a href="javascript:void(0)" class="username"><?php echo ucfirst($this->session->userdata('ufullname')); ?></a></h5>
           <ul>
             <li class="dropdown">
-                <small><?php echo ucfirst($this->session->userdata('urolename')); ?></small>
+              <small><?php echo ucfirst($this->session->userdata('urolename')); ?></small>
             </li>
           </ul>
         </div>
@@ -38,6 +38,16 @@
           <a href="<?php echo site_url('manage') ?>">
             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
             <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="<?php echo ($this->uri->segment(2) == 'register') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/register') ?>">
+            <i class="menu-icon zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
+            <span class="menu-text">Pendaftaran</span>
+            <?php if(notif_reg()!=0) { ?>
+              <span class="label label-warning menu-label"><?php echo notif_reg() ?></span>
+            <?php } ?>
           </a>
         </li>
 
@@ -68,18 +78,9 @@
           <a href="<?php echo site_url('manage/blasting') ?>">
             <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
             <span class="menu-text">Blasting</span>
-          </a>
-        </li>
-        <li class="<?php echo ($this->uri->segment(2) == 'register') ? 'active' : '' ?>"">
-          <a href="<?php echo site_url('manage/register') ?>">
-            <i class="menu-icon zmdi zmdi-accounts-alt zmdi-hc-lg"></i>
-            <span class="menu-text">Pendaftaran</span>
-          </a>
-        </li>
-        <li class="<?php echo ($this->uri->segment(2) == 'mailbox') ? 'active' : '' ?>"">
-          <a href="<?php echo site_url('manage/mailbox') ?>">
-            <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
-            <span class="menu-text">Mailbox</span>
+            <?php if(notif_blast()!=0) { ?>
+              <span class="label label-warning menu-label"><?php echo notif_blast() ?></span>
+            <?php } ?>
           </a>
         </li>
 
@@ -87,6 +88,15 @@
           <a href="<?php echo site_url('manage/subscriber') ?>">
             <i class="menu-icon zmdi zmdi-notifications-active zmdi-hc-lg"></i>
             <span class="menu-text">Subscribers</span>
+          </a>
+        </li>
+        <li class="<?php echo ($this->uri->segment(2) == 'mailbox') ? 'active' : '' ?>"">
+          <a href="<?php echo site_url('manage/mailbox') ?>">
+            <i class="menu-icon zmdi zmdi-email zmdi-hc-lg"></i>
+            <span class="menu-text">Mailbox</span>
+            <?php if(notif_mail()!=0) { ?>
+              <span class="label label-warning menu-label"><?php echo notif_mail() ?></span>
+            <?php } ?>
           </a>
         </li>
 
@@ -110,12 +120,12 @@
         <li class="has-submenu <?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?>">
           <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon zmdi zmdi-account zmdi-hc-lg"></i>
-            <span class="menu-text">Manage Users</span>
+            <span class="menu-text">Pengguna</span>
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
             <li class="<?php echo ($this->uri->segment(2) == 'users') ? 'active' : '' ?>">
-              <a href="<?php echo site_url('manage/users') ?>"><span class="menu-text">Users List</span></a>
+              <a href="<?php echo site_url('manage/users') ?>"><span class="menu-text">Daftar Pengguna</span></a>
             </li>
           </ul>
         </li>

@@ -17,6 +17,15 @@ class Register_model extends CI_Model {
             $this->db->where('registers.register_status', $params['status']);
         }
 
+        if(isset($params['date_start']) AND isset($params['date_end'])) {
+            $this->db->where('register_input_date >=', $params['date_start'] . ' 00:00:00');
+            $this->db->where('register_input_date <=', $params['date_end'] . ' 23:59:59');
+        }
+
+        if(isset($params['group'])){
+            $this->db->group_by('registers.register_id');
+        }
+
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
                 $params['offset'] = NULL;
@@ -33,8 +42,53 @@ class Register_model extends CI_Model {
 
         $this->db->select('*');
 
-        $this->db->join('members', 'members.register_id = registers.register_id','right');
+        $this->db->join('members', 'members.register_id = registers.register_id','left');
         $this->db->join('trainings', 'trainings.training_id = registers.training_id','left');
+
+        $res = $this->db->get('registers');
+
+        if (isset($params['id'])) {
+            return $res->row_array();
+        } else {
+            return $res->result_array();
+        }
+    }
+    function get_reg($params = array()) {
+
+        if (isset($params['id'])) {
+            $this->db->where('registers.register_id', $params['id']);
+        }
+
+        if (isset($params['status'])) {
+            $this->db->where('registers.register_status', $params['status']);
+        }
+
+        if(isset($params['search']))
+        {
+            $this->db->where('register_no', $params['search']);
+            $this->db->or_like('register_corporate', $params['search']);
+        }
+
+        if(isset($params['date_start']) AND isset($params['date_end'])) {
+            $this->db->where('register_input_date >=', $params['date_start'] . ' 00:00:00');
+            $this->db->where('register_input_date <=', $params['date_end'] . ' 23:59:59');
+        }
+
+        if (isset($params['limit'])) {
+            if (!isset($params['offset'])) {
+                $params['offset'] = NULL;
+            }
+
+            $this->db->limit($params['limit'], $params['offset']);
+        }
+
+        if (isset($params['order_by'])) {
+            $this->db->order_by($params['order_by'], 'desc');
+        } else {
+            $this->db->order_by('register_input_date', 'desc');
+        }
+
+        $this->db->select('*');
 
         $res = $this->db->get('registers');
 
@@ -109,6 +163,10 @@ class Register_model extends CI_Model {
 
         if (isset($data['training_id'])) {
             $this->db->set('training_id', $data['training_id']);
+        }
+
+        if (isset($data['register_status'])) {
+            $this->db->set('register_status', $data['register_status']);
         }
 
         if (isset($data['register_input_date'])) {
@@ -211,7 +269,7 @@ class Register_model extends CI_Model {
         $this->db->where('register_id', $id);
         $this->db->delete('registers');
     }
-	
+
 
 }
 

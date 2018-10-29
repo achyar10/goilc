@@ -8,6 +8,9 @@ class Mailbox_model extends CI_Model {
         if (isset($params['id'])) {
             $this->db->where('mailbox.mailbox_id', $params['id']);
         }
+        if (isset($params['status'])) {
+            $this->db->where('mailbox.mailbox_status', $params['status']);
+        }
 
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
@@ -62,6 +65,10 @@ class Mailbox_model extends CI_Model {
 
         if (isset($data['mailbox_desc'])) {
             $this->db->set('mailbox_desc', $data['mailbox_desc']);
+        }
+
+        if (isset($data['mailbox_status'])) {
+            $this->db->set('mailbox_status', $data['mailbox_status']);
         }
 
         if (isset($data['mailbox_input_date'])) {

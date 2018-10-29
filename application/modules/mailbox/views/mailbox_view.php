@@ -41,6 +41,11 @@
 							<td>:</td>
 							<td><?php echo pretty_date($mailbox['mailbox_input_date'],'d F Y H:i:s',false) ?></td>
 						</tr>
+						<tr>
+							<td>Terakhir dibaca</td>
+							<td>:</td>
+							<td><?php echo pretty_date($mailbox['mailbox_last_update'],'d F Y H:i:s',false) ?></td>
+						</tr>
 					</table>
 					<a href="<?php echo site_url('manage/mailbox') ?>" class="btn btn-primary btn-sm">Back</a>
 				</div>

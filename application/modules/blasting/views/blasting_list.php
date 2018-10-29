@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="widget p-lg">
-				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/blasting/add') ?>" class="btn btn-warning btn-sm pull-right"><i class="fa fa-plus"></i> Tambah Blasting</a></h4>
+				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/blasting/add') ?>" class="btn btn-warning btn-xs pull-right"><i class="fa fa-plus"></i> Tambah Blasting</a></h4>
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<tr>
