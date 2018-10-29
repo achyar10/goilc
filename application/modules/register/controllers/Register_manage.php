@@ -45,7 +45,7 @@ class Register_manage extends CI_Controller {
 
 	function view($id = NULL) {
 
-		$data['register'] = $this->Register_model->get(array('id' => $id));
+		$data['register'] = $this->Register_model->get_reg(array('id' => $id));
 		$data['member'] = $this->Register_model->get_member(array('register_id'=>$id));
 		$data['title'] = 'Detail Pendaftaran';
 		$data['main'] = 'register/register_view';
@@ -77,7 +77,7 @@ class Register_manage extends CI_Controller {
 			'register_status' =>2
 		));
 
-		$this->session->set_flashdata('success', 'Approval success');
+		$this->session->set_flashdata('success', 'Reject success');
 			redirect('manage/register/view/'.$id);
 	}
 

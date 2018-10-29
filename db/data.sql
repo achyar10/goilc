@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 01, 2018 at 11:55 AM
+-- Generation Time: Oct 29, 2018 at 11:39 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.13
 
@@ -21,11 +21,33 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`service_id`, `service_name`) VALUES
+(1, 'Pelatihan');
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`setting_id`, `setting_name`, `setting_value`, `setting_last_update`) VALUES
+(1, 'setting_pt', 'PT INOVASI LENTERA CIPTA KREASI', '2018-10-27 03:54:11'),
+(2, 'setting_address', 'Gedung Senayan Trade Center [ STC ] Senayan Lt. 4 No. 69 A, Jl. Asia Afrika, Senayan, Jakarta Pusat 10270', '2018-10-27 03:54:11'),
+(3, 'setting_phone', '(021) 5793-9389', '2018-10-27 03:54:11'),
+(4, 'setting_fax', '(021) 2954-3463', '2018-10-27 03:54:11'),
+(5, 'setting_email', 'info@goilc.co.id', '2018-10-27 03:54:11'),
+(6, 'setting_linkedin', '-', '2018-10-27 03:54:11'),
+(7, 'setting_fb', 'https://facebook.com/achyar.anshorie', '2018-10-27 03:54:11'),
+(8, 'setting_twitter', '-', '2018-10-27 03:54:11'),
+(9, 'setting_instagram', '-', '2018-10-27 03:54:11');
+
+--
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `user_full_name`, `user_image`, `user_description`, `user_role_role_id`, `user_input_date`, `user_last_update`, `user_last_login`) VALUES
-(1, 'admin@ilc.co.id', 'cfae66c98aa8d86383e07f1e1ea5d68e1cc6a613', 'Administrator', NULL, 'SUPER ADMIN', 1, '2018-10-01 04:15:29', '2018-10-01 04:19:31', '2018-10-01 04:19:31');
+(1, 'admin@goilc.co.id', 'cfae66c98aa8d86383e07f1e1ea5d68e1cc6a613', 'Administrator', NULL, 'SUPER ADMIN', 1, '2018-10-01 04:15:29', '2018-10-02 04:33:56', '2018-10-02 04:33:56');
 
 --
 -- Dumping data for table `user_roles`

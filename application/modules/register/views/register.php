@@ -120,7 +120,7 @@
 									</div>
 									<div class="col-md-3">
 										<div class="form-group">
-											<input type="text" required="" placeholder="Email" class="form-control" name="member_email[]">
+											<input type="email" required="" placeholder="Email" class="form-control" name="member_email[]">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -157,20 +157,32 @@
 <script>
 	$(function() {
 		var scntDiv = $('#p_scents_peserta');
-		var i = $('#p_scents_peserta .psrt').size() + 1;
+		var i = $('#p_scents_peserta .col').size() + 1;
 
 		$("#addScnt_peserta").click(function() {
-			$('<div class="psrt"><div class="row"><div class="col-md-3"><div class="form-group"><input type="text" placeholder="Nama Peserta" class="form-control" name="member_name[]"></div></div><div class="col-md-3"><div class="form-group"><input type="text" placeholder="Jabatan" class="form-control" name="member_jab[]"></div></div><div class="col-md-3"><div class="form-group"><input type="text" placeholder="Email" class="form-control" name="member_email[]"></div></div><div class="col-md-3"><div class="form-group"><input type="text" placeholder="No. Handphone" class="form-control" name="member_phone[]"></div></div></div></div>').appendTo(scntDiv);
+			$('<div class="col"><hr><div class="row"><div class="col-md-3"><div class="form-group"><input type="text" placeholder="Nama Peserta" class="form-control" name="member_name[]" required=""></div></div><div class="col-md-3"><div class="form-group"><input type="text" placeholder="Jabatan" class="form-control" name="member_jab[]" required=""></div></div><div class="col-md-3"><div class="form-group"><input type="email" placeholder="Email" class="form-control" name="member_email[]" required=""></div></div><div class="col-md-3"><div class="form-group"><input type="text" placeholder="No. Handphone" class="form-control" name="member_phone[]" required=""></div></div></div><a href="#" class="btn btn-xs btn-danger remScnt_peserta"><i class="fa fa-trash"></i> Hapus Baris</a></div>').appendTo(scntDiv);
 			i++;
 			return false;
 		});
 
 		$(document).on("click", ".remScnt_peserta", function() {
-			if (i > 2) {
-				$(this).parents('.psrt').remove();
+			if (i > 1) {
+				$(this).parents('.col').remove();
 				i--;
 			}
 			return false;
 		});
+	});
+</script>
+<script type="text/javascript">
+	$('form').submit(function(event) {
+		if ($(this).hasClass('submitted')) {
+			event.preventDefault();
+		} else {
+			$(this).find(':submit')
+			.html('<i class="fa fa-spinner fa-spin"></i> Loading...')
+			.attr('disabled', 'disabled');
+			$(this).addClass('submitted');
+		}
 	});
 </script>
