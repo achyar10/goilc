@@ -76,7 +76,7 @@
         <div class="col-md-4 col-sm-6">
           <aside class="ftr-widget newsletter_widget">
             <h3 class="widget-title">SUBSCRIBE</h3>
-            <p>Jadwal Pelatihan Agar Anda selalu Update Dengan Program Yang Kami sediakan</p>
+            <p>Agar Anda selalu Update Dengan Program Yang Kami sediakan</p>
             <form action="<?php echo site_url('home') ?>" method="POST">
               <div class="input-group">
                 <input type="email" name="subscriber_email" class="form-control" placeholder="Enter your email">
@@ -109,6 +109,20 @@
 
   <!-- Library - Theme JS -->
   <script src="<?php echo media_url('frontend/js/functions.js') ?>"></script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/5bd3d3e5476c2f239ff63a9f/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
 
   <script type="text/javascript">
     $(function() {

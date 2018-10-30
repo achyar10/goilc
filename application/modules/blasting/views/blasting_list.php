@@ -26,7 +26,7 @@
 										<td>
 											<a href="<?php echo site_url('manage/blasting/view/'.$row['blasting_id']) ?>" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Lihat</a>
 											<a href="<?php echo site_url('manage/blasting/edit/'.$row['blasting_id']) ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-											<a href="<?php echo site_url('manage/blasting/send_blasting/'.$row['blasting_id']) ?>" class="btn btn-danger btn-xs"><i class="fa fa-envelope"></i> Blasting</a>
+											<a href="<?php echo site_url('manage/blasting/send_blasting/'.$row['blasting_id']) ?>" class="btn btn-danger btn-xs" onclick="return confirm('Apakah anda akan memblasting pesan ini?')"><i class="fa fa-envelope"></i> Blasting</a>
 										</td>
 									</tr>
 									<?php

@@ -65,32 +65,4 @@
 		</div>
 		<div class="section-padding"></div>
 	</div>
-	<div class="contactdetail-block">
-		<div class="container">
-			<div class="col-md-3 col-sm-3 col-xs-6 contactinfo-box">
-				<span class="icon icon-Pointer"></span>
-				<h3>Where We Are?</h3>
-				<p>2901 Marmora road, Glassgow, Seattle, WA 98122</p>
-				<a href="#" title="MORE ABOUT US ">MORE ABOUT US </a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-6 contactinfo-box">
-				<span class="icon icon-Phone2"></span>
-				<h3>Give us a Call</h3>
-				<p>Consectetuer ux adipis cing elit sed dolor sit amet.</p>
-				<a href="tel:+4301234321243" title="+4301234321243">+43 (0) 123 432 12 43</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-6 contactinfo-box">
-				<span class="icon icon-Printer"></span>
-				<h3>Vist Our Office</h3>
-				<p>Consectetuer ux adipis cing elit sed dolor sit amet.</p>
-				<a href="#" title="Get Direction">Get Direction</a>
-			</div>
-			<div class="col-md-3 col-sm-3 col-xs-6 contactinfo-box">
-				<span class="icon icon-Imbox"></span>
-				<h3>Drop us a Line</h3>
-				<p>Consectetuer ux adipis cing elit sed dolor sit amet.</p>
-				<a href="mailto:Support@Edumax.Com" title="Support@Edumax.Com">Support@Edumax.Com</a>
-			</div>
-		</div>
-	</div>
 </div>

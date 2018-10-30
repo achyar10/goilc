@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('subscriber/Subscriber_model', 'training/Training_model')); 
+		$this->load->model(array('subscriber/Subscriber_model', 'training/Training_model', 'gallery/Gallery_model', 'client/Client_model')); 
 	}
 
 	public function index() {
@@ -33,6 +33,8 @@ class Home extends CI_Controller {
 			$config['base_url'] = site_url('home/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
 			$data['training'] = $this->Training_model->get($params);
+			$data['event'] = $this->Gallery_model->get($params);
+			$data['client'] = $this->Client_model->get();
 			$data['title'] = 'Home';
 			$data['main'] = 'home/home';
 			$this->load->view('frontend/layout', $data);

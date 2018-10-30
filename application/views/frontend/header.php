@@ -38,8 +38,8 @@
             <div class="navbar-collapse collapse" id="navbar">
               <ul class="nav navbar-nav menubar">
                <li><a href="<?php echo site_url('home') ?>">Home</a></li>
-               <li><a href="<?php echo site_url('event') ?>">Event</a></li>
                <li><a href="<?php echo site_url('training') ?>">Training</a></li>
+               <li><a href="<?php echo site_url('event') ?>">Event</a></li>
                <li><a href="<?php echo site_url('client') ?>">Client</a></li>
                <li><a href="<?php echo site_url('about') ?>">About Us</a></li>
                <li><a href="<?php echo site_url('contact') ?>">Contact Us</a></li>
