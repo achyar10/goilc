@@ -38,23 +38,16 @@
             <div class="navbar-collapse collapse" id="navbar">
               <ul class="nav navbar-nav menubar">
                <li><a href="<?php echo site_url('home') ?>">Home</a></li>
-               <li><a href="<?php echo site_url('activity') ?>">Event</a></li>
-
-               <li class="dropdown">
-                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Service</a>
-                <i class="ddl-switch fa fa-angle-down"></i>
-                <ul class="dropdown-menu">
-                  <li><a title="Home 2" href="<?php echo site_url('training') ?>">Training</a></li>
-                </ul>
-              </li>
-              <li><a href="<?php echo site_url('client') ?>">Client</a></li>
-              <li><a href="<?php echo site_url('about') ?>">About Us</a></li>
-              <li><a href="<?php echo site_url('contact') ?>">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav><!-- Navigation /- -->
-      <div class="menu-search">
+               <li><a href="<?php echo site_url('event') ?>">Event</a></li>
+               <li><a href="<?php echo site_url('training') ?>">Training</a></li>
+               <li><a href="<?php echo site_url('client') ?>">Client</a></li>
+               <li><a href="<?php echo site_url('about') ?>">About Us</a></li>
+               <li><a href="<?php echo site_url('contact') ?>">Contact Us</a></li>
+             </ul>
+           </div>
+         </div>
+       </nav><!-- Navigation /- -->
+       <div class="menu-search">
         <div id="sb-search" class="sb-search">
           <form>
             <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search" />

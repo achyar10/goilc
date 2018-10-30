@@ -1,10 +1,10 @@
 <div class="container-fluid no-padding pagebanner">
 	<div class="container">
 		<div class="pagebanner-content">
-			<h3>Hubungi Kami</h3>
-			<ol class="breadcrumb">
-				<li><a href="<?php echo site_url('home') ?>">Beranda</a></li>
-				<li>Hubungi Kami</li>
+			<h3 style="margin-top: -60px;"><?php echo $title ?></h3>
+			<ol class="breadcrumb" style="margin-top: -60px;">
+				<li><a href="<?php echo site_url('home') ?>">Home</a></li>
+				<li><?php echo $title ?></li>
 			</ol>
 		</div>
 	</div>

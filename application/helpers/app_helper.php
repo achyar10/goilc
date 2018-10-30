@@ -153,21 +153,14 @@ function instagram() {
     return $result['setting_value'];
 }
 
-if ( ! function_exists('visualisation_url'))
+if ( ! function_exists('training_url'))
 {
-    function visualisation_url($visualisation = array())
+    function training_url($training = array())
     {
-            return site_url('visualisation/detail/'.$visualisation['visualisation_id'].'/'.url_title($visualisation['visualisation_name'], '-', TRUE));
+            return site_url('training/detail/'.$training['training_id'].'/'.url_title($training['training_name'], '-', TRUE));
     }
 }
 
-if ( ! function_exists('infografis_url'))
-{
-    function infografis_url($infografis = array())
-    {
-            return site_url('infografis/detail/'.$infografis['infografis_id'].'/'.url_title($infografis['infografis_name'], '-', TRUE));
-    }
-}
 
 function notif_reg() {
     $CI = & get_instance();

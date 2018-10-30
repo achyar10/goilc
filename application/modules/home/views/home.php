@@ -44,7 +44,6 @@
   <div class="section-padding"></div>
   <div class="section-header">
     <h3>Pelatihan <span>Terbaru</span></h3>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
   </div>
   <div class="row">
     <?php foreach($training as $row): ?>
@@ -54,7 +53,7 @@
             <img src="<?php echo upload_url('training/'.$row['training_brocure']) ?>">
           </div>
           <div class="welcome-title">
-            <h3><a href="<?php echo site_url('regtraining/'.$row['training_id']) ?>"><?php echo $row['training_name'] ?></a></h3>
+            <h3><?php echo $row['training_name'] ?></h3>
           </div>  
           <div class="welcome-content">
             <br>
@@ -63,7 +62,7 @@
               <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']) ?></span></li>
               <li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
             </ul>
-            <a href="<?php echo site_url('register/regtraining/'.$row['training_id']) ?>">Register</a>
+            <a href="<?php echo training_url($row) ?>">Detail</a>
           </div>
         </div>
       </div>
@@ -78,9 +77,8 @@
   <div class="section-header-block">
     <div class="section-header">
       <h3>Our <span>Events</span></h3>
-      <p>Upcoming Education Events to feed your brain<p>
       </div>
-      <a href="events-page.html" title="View All">View All</a>
+      <a href="<?php echo site_url('event') ?>" title="View All">View All</a>
     </div>
     <div class="event-block">
       <div class="event-box">
@@ -95,42 +93,6 @@
               <span><i aria-hidden="true" class="fa fa-map-marker"></i>London, UK</span>
             </div>
             <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.</p>
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <a href="#" class="readmore" title="Read More">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="event-box">
-        <div class="row">
-          <div class="col-md-3 col-sm-4 col-xs-5">
-            <img src="<?php echo media_url('frontend/images/event2.jpg') ?>" alt="event2" width="260" height="160"/>
-          </div>
-          <div class="col-md-7 col-sm-6 col-xs-7">
-            <h3><a href="#" title="Student Exchange Program Information Sessions">Student Exchange Program Information Sessions</a></h3>
-            <div class="event-meta">
-              <span><i aria-hidden="true" class="fa fa-clock-o"></i>8:00 Am - 5:00 Pm</span>
-              <span><i aria-hidden="true" class="fa fa-map-marker"></i>London, UK</span>
-            </div>
-            <p>Business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds.</p>
-          </div>
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <a href="#" class="readmore" title="Read More">Read More</a>
-          </div>
-        </div>
-      </div>
-      <div class="event-box">
-        <div class="row">
-          <div class="col-md-3 col-sm-4 col-xs-5">
-            <img src="<?php echo media_url('frontend/images/event3.jpg') ?>" alt="event3" width="260" height="160"/>
-          </div>
-          <div class="col-md-7 col-sm-6 col-xs-7">
-            <h3><a href="#" title="Chicago Architecture Foundation River Cruise">Chicago Architecture Foundation River Cruise</a></h3>
-            <div class="event-meta">
-              <span><i aria-hidden="true" class="fa fa-clock-o"></i>8:00 Am - 5:00 Pm</span>
-              <span><i aria-hidden="true" class="fa fa-map-marker"></i>London, UK</span>
-            </div>
-            <p>But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures.</p>
           </div>
           <div class="col-md-2 col-sm-2 col-xs-12">
             <a href="#" class="readmore" title="Read More">Read More</a>

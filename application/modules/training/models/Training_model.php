@@ -14,6 +14,11 @@ class Training_model extends CI_Model {
             $this->db->where('user_id', $params['user_id']);
         }
 
+        if(isset($params['search']))
+        {
+            $this->db->like('training_name', $params['search']);
+        }
+
         if (isset($params['category_id'])) {
             $this->db->where('category_id', $params['category_id']);
         }
