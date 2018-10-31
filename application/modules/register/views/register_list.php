@@ -44,7 +44,7 @@
 							} else {
 								?>
 								<tr id="row">
-									<td colspan="6" align="center">Data Empty</td>
+									<td colspan="6" align="center">Data Kosong</td>
 								</tr>
 							<?php } ?>
 						</tbody>

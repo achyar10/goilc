@@ -40,6 +40,10 @@
 			<td style="font-weight: bold;">PERUSAHAAN</td>
 			<td>: <?php echo $register['register_corporate'] ?></td>
 		</tr>
+		<tr>
+			<td style="font-weight: bold;">NOMOR PENDAFTARAN</td>
+			<td>: <?php echo $register['register_no'] ?></td>
+		</tr>
 	</table>
 	<br>
 	<table width="100%" border="1px">

@@ -44,7 +44,7 @@ class Users_manage extends CI_Controller {
         $config['total_rows'] = count($this->Users_model->get($paramsPage));
         $this->pagination->initialize($config);
 
-        $data['title'] = 'Users';
+        $data['title'] = 'Pengguna';
         $data['main'] = 'users/user_list';
         $this->load->view('manage/layout', $data);
     }
@@ -85,7 +85,7 @@ class Users_manage extends CI_Controller {
 
             $paramsupdate['user_id'] = $status;
             $this->Users_model->add($paramsupdate);
-            $this->session->set_flashdata('success', $data['operation'] . ' User success');
+            $this->session->set_flashdata('success', $data['operation'] . ' Pengguna success');
             redirect('manage/users');
         } else {
             if ($this->input->post('user_id')) {
@@ -102,7 +102,7 @@ class Users_manage extends CI_Controller {
                 }
             }
             $data['roles'] = $this->Users_model->get_role();
-            $data['title'] = $data['operation'] . ' User';
+            $data['title'] = $data['operation'] . ' Pengguna';
             $data['main'] = 'users/user_add';
             $this->load->view('manage/layout', $data);
         }
@@ -111,7 +111,7 @@ class Users_manage extends CI_Controller {
     // View data detail
     public function view($id = NULL) {
         $data['user'] = $this->Users_model->get(array('id' => $id));
-        $data['title'] = 'Users Detail';
+        $data['title'] = 'Detail Pengguna';
         $data['main'] = 'users/user_view';
         $this->load->view('manage/layout', $data);
     }
@@ -124,7 +124,7 @@ class Users_manage extends CI_Controller {
         if ($_POST) {
             $this->Users_model->delete($id);
 
-            $this->session->set_flashdata('success', 'delete User success');
+            $this->session->set_flashdata('success', 'Hapus Pengguna success');
             redirect('manage/users');
         } elseif (!$_POST) {
             $this->session->set_flashdata('delete', 'Delete');

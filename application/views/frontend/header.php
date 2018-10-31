@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="<?php echo site_url('home') ?>">
+              <a href="<?php echo site_url('/') ?>">
                 <img src="<?php echo media_url('img/logo.png') ?>" style="height: 50px;" alt="logo" class="hidden-lg hidden-sm hidden-md">
                 <img src="<?php echo media_url('img/logo.png') ?>" style="margin-top:15px;height: 80px;" alt="logo" class="hidden-xs">
               </a>
@@ -37,12 +37,13 @@
           <div class="col-md-9">
             <div class="navbar-collapse collapse" id="navbar">
               <ul class="nav navbar-nav menubar">
-               <li><a href="<?php echo site_url('home') ?>">Home</a></li>
+               <li><a href="<?php echo site_url('/') ?>">Home</a></li>
                <li><a href="<?php echo site_url('training') ?>">Training</a></li>
                <li><a href="<?php echo site_url('event') ?>">Event</a></li>
                <li><a href="<?php echo site_url('client') ?>">Client</a></li>
                <li><a href="<?php echo site_url('about') ?>">About Us</a></li>
                <li><a href="<?php echo site_url('contact') ?>">Contact Us</a></li>
+               <li><a href="<?php echo site_url('recruitment') ?>">Carrer</a></li>
              </ul>
            </div>
          </div>

@@ -2,14 +2,14 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="widget p-lg">
-				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/users/add') ?>" class="btn btn-warning btn-sm pull-right">Add Users</a></h4>
+				<h4 class="m-b-lg"><?php echo ($title != NULL) ? $title : '' ?> <a href="<?php echo site_url('manage/users/add') ?>" class="btn btn-warning btn-sm pull-right"><i class="fa fa-plus"></i> Tambah Pengguna</a></h4>
 				<div class="table-responsive">
 					<table class="table table-hover">
 						<tr>
 							<th>No</th>
 							<th>Email</th>
-							<th>Full Name</th>
-							<th>Roles</th>
+							<th>Nama Lengkap</th>
+							<th>Level</th>
 							<th>Action</th>
 						</tr>
 						<tbody>
@@ -44,7 +44,7 @@
 							} else {
 								?>
 								<tr id="row">
-									<td colspan="6" align="center">Data Empty</td>
+									<td colspan="6" align="center">Data Kosong</td>
 								</tr>
 							<?php } ?>
 						</tbody>

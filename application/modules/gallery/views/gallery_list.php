@@ -32,7 +32,7 @@
 							} else {
 								?>
 								<tr id="row">
-									<td colspan="3" align="center">Data Empty</td>
+									<td colspan="3" align="center">Data Kosong</td>
 								</tr>
 							<?php } ?>
 						</tbody>

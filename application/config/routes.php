@@ -73,6 +73,6 @@ $route['(:any)/detail/(:num)'] = "$1/detail/$2";
 $route['(:any)/detail/(:num)/(:any)'] = "$1/detail/$2";
 $route['(:any)/(:any)/(:num)/(:any)'] = "$2/detail/$3";
 
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

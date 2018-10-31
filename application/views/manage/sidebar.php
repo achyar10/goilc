@@ -28,7 +28,7 @@
       <ul class="app-menu">
 
         <li>
-          <a href="<?php echo site_url('home') ?>" target="_blank">
+          <a href="<?php echo site_url('/') ?>" target="_blank">
             <i class="menu-icon zmdi zmdi-globe zmdi-hc-lg"></i>
             <span class="menu-text">Lihat Website</span>
           </a>
@@ -51,20 +51,16 @@
           </a>
         </li>
 
-        <li class="<?php echo ($this->uri->segment(2) == 'training') ? 'active' : '' ?>"">
-          <a href="<?php echo site_url('manage/training') ?>">
-            <i class="menu-icon zmdi zmdi-assignment-check zmdi-hc-lg"></i>
-            <span class="menu-text">Jadwal Pelatihan</span>
-          </a>
-        </li>
-
-        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'category') ? 'active' : '' ?>">
+        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'training' OR $this->uri->segment(2) == 'category' OR $this->uri->segment(2) == 'service') ? 'active' : '' ?>">
           <a href="javascript:void(0)" class="submenu-toggle">
             <i class="menu-icon zmdi zmdi-assignment zmdi-hc-lg"></i>
-            <span class="menu-text">Master Pelatihan</span>
+            <span class="menu-text">Pelatihan</span>
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
+            <li class="<?php echo ($this->uri->segment(2) == 'training') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/training') ?>"><span class="menu-text">Jadwal Pelatihan</span></a>
+            </li>
             <li class="<?php echo ($this->uri->segment(2) == 'category') ? 'active' : '' ?>">
               <a href="<?php echo site_url('manage/category') ?>"><span class="menu-text">Daftar Kategori</span></a>
             </li>
@@ -98,6 +94,19 @@
               <span class="label label-warning menu-label"><?php echo notif_mail() ?></span>
             <?php } ?>
           </a>
+        </li>
+
+        <li class="has-submenu <?php echo ($this->uri->segment(2) == 'report') ? 'active' : '' ?>">
+          <a href="javascript:void(0)" class="submenu-toggle">
+            <i class="menu-icon zmdi zmdi-file-text zmdi-hc-lg"></i>
+            <span class="menu-text">Laporan</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+          </a>
+          <ul class="submenu">
+            <li class="<?php echo ($this->uri->segment(2) == 'report') ? 'active' : '' ?>">
+              <a href="<?php echo site_url('manage/report/reportRegister') ?>"><span class="menu-text">Laporan Pendaftar</span></a>
+            </li>
+          </ul>
         </li>
 
         <li class="has-submenu <?php echo ($this->uri->segment(2) == 'gallery' OR $this->uri->segment(2) == 'slideshow') ? 'active' : '' ?>">
