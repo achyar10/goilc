@@ -15,7 +15,7 @@
 	<div class="section-padding"></div>	
 	<?php echo form_open(current_url(), array('method' => 'get')) ?>
 	<div class="search-result">
-		<div class="input-group col-md-2">
+		<div class="input-group col-md-3">
 			<input type="text" class="form-control" name="n" <?php echo (isset($f['n'])) ? 'placeholder="'.$f['n'].'"' : 'placeholder="Search Training"' ?>>
 			<span class="input-group-btn">
 				<button class="btn" type="submit"><i class="fa fa-search"></i></button>
@@ -43,7 +43,6 @@
 					</div>  
 					<div class="welcome-content">
 						<p><?php echo $row['category_name'] ?></p>
-						<br>
 						<ul class="course-detail">
 							<li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
 							<li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']). '/participant' ?></span></li>

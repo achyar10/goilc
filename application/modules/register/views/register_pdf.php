@@ -47,7 +47,7 @@
 	</table>
 	<br>
 	<table width="100%" border="1px">
-		<tr>
+		<tr style="white-space: nowrap;">
 			<th>NO</th>
 			<th>NAMA</th>
 			<th>JABATAN</th>
@@ -59,10 +59,10 @@
 		foreach($member as $key): ?>
 			<tr style="white-space: nowrap;">
 				<td style="text-align: center;"><?php echo $i; ?></td>
-				<td>&nbsp;<?php echo $key['member_name'] ?></td>
-				<td>&nbsp;<?php echo $key['member_jab'] ?></td>
-				<td>&nbsp;<?php echo $key['member_phone'] ?></td>
-				<td>&nbsp;<?php echo $key['member_email'] ?></td>
+				<td><?php echo $key['member_name'] ?></td>
+				<td><?php echo $key['member_jab'] ?></td>
+				<td><?php echo $key['member_phone'] ?></td>
+				<td><?php echo $key['member_email'] ?></td>
 			</tr>
 			<?php 
 			$i++;
@@ -77,39 +77,39 @@
 		</tr>
 		<tr>
 			<td style="font-weight:bold">NAMA</td>
-			<td>&nbsp;<?php echo $register['register_pic_name'] ?></td>
+			<td><?php echo $register['register_pic_name'] ?></td>
 			<td style="font-weight:bold">NAMA</td>
-			<td>&nbsp;<?php echo $register['register_pay_name'] ?></td>
+			<td><?php echo $register['register_pay_name'] ?></td>
 		</tr>
 		<tr>
 			<td style="font-weight:bold">JABATAN</td>
-			<td>&nbsp;<?php echo $register['register_pic_jab'] ?></td>
+			<td><?php echo $register['register_pic_jab'] ?></td>
 			<td style="font-weight:bold">JABATAN</td>
-			<td>&nbsp;<?php echo $register['register_pay_jab'] ?></td>
+			<td><?php echo $register['register_pay_jab'] ?></td>
 		</tr>
 		<tr>
 			<td style="font-weight:bold">TELP (Ext.)</td>
-			<td>&nbsp;<?php echo $register['register_pic_tlp'] ?></td>
+			<td><?php echo $register['register_pic_tlp'] ?></td>
 			<td style="font-weight:bold">TELP (Ext.)</td>
-			<td>&nbsp;<?php echo $register['register_pay_tlp'] ?></td>
+			<td><?php echo $register['register_pay_tlp'] ?></td>
 		</tr>
 		<tr>
 			<td style="font-weight:bold">FAX</td>
-			<td>&nbsp;<?php echo $register['register_pic_fax'] ?></td>
+			<td><?php echo $register['register_pic_fax'] ?></td>
 			<td style="font-weight:bold">FAX</td>
-			<td>&nbsp;<?php echo $register['register_pay_fax'] ?></td>
+			<td><?php echo $register['register_pay_fax'] ?></td>
 		</tr>
 		<tr>
 			<td style="font-weight:bold">HANDPHONE</td>
-			<td>&nbsp;<?php echo $register['register_pic_phone'] ?></td>
+			<td><?php echo $register['register_pic_phone'] ?></td>
 			<td style="font-weight:bold">HANDPHONE</td>
-			<td>&nbsp;<?php echo $register['register_pay_phone'] ?></td>
+			<td><?php echo $register['register_pay_phone'] ?></td>
 		</tr>
 		<tr>
 			<td style="font-weight:bold">EMAIL</td>
-			<td>&nbsp;<?php echo $register['register_pic_email'] ?></td>
+			<td><?php echo $register['register_pic_email'] ?></td>
 			<td style="font-weight:bold">ALAMAT PENGIRIMAN INVOICE</td>
-			<td>&nbsp;<?php echo $register['register_add_inv'] ?></td>
+			<td><?php echo $register['register_add_inv'] ?></td>
 		</tr>
 	</table>
 	<br>

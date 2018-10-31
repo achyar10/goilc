@@ -26,6 +26,7 @@ class Training extends CI_Controller {
 			$params['cat'] = $f['c'];
 		}
 
+		$params['status'] = TRUE;
 		$paramsPage = $params;
 		$params['limit'] = 9;
 		$params['offset'] = $offset;

@@ -137,6 +137,7 @@ class Register extends CI_Controller {
 			redirect('home','refresh');
 		}
 		$data['register'] = $this->Register_model->get(array('id'=>$id));
+		$data['member'] = $this->Register_model->get_member(array('register_id'=>$id));
 		$data['title'] = 'Pendaftaran';
 		$data['main'] = 'register/register_success';
 		$this->load->view('frontend/layout', $data);

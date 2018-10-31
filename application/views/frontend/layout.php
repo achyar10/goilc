@@ -47,6 +47,7 @@
       </div>
     </div>
   </div> 
+  
   <!-- Header -->
   <?php $this->load->view('frontend/header') ?>
   <!-- Header -->

@@ -29,6 +29,7 @@ class Home extends CI_Controller {
 
 		} else {
 
+			$params['status'] = TRUE;
 			$params['limit'] = 3;
 			$config['base_url'] = site_url('home/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");

@@ -57,7 +57,6 @@ a{
           </div>  
           <div class="welcome-content">
             <p><?php echo $row['category_name'] ?></p>
-            <br>
             <ul class="course-detail">
               <li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
               <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']).' /participant' ?></span></li>
