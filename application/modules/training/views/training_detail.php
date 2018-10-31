@@ -23,10 +23,11 @@
 		</div>
 		<div class="col-md-3 col-sm-4 event-sidebar">
 			<div class="courses-features">
-				<h3 class="text-center"><?php echo $training['training_name'] ?></h3>
+				<h3 class="text-left"><?php echo $training['training_name'] ?></h3>
+				<h3 style="font-size: 10pt"><?php echo $training['category_name'] ?></h3>
 				<hr>
 				<div class="featuresbox">
-					<i class="fa fa-dollar"></i> <span> <?php echo 'Rp. '. number_format($training['training_price']) ?></span>
+					<i class="fa fa-dollar"></i> <span> <?php echo 'Rp. '. number_format($training['training_price']). '/participant' ?></span>
 				</div>
 				<div class="featuresbox">
 					<i class="fa fa-building"></i> <span><?php echo $training['training_place'] ?></span>

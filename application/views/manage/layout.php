@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="<?php echo media_url('css/core.css') ?>">
   <link rel="stylesheet" href="<?php echo media_url('css/app.css') ?>">
   <link rel="stylesheet" href="<?php echo media_url('css/bootstrap-datepicker.min.css') ?>">
-  <link rel="stylesheet" href="<?php echo media_url('css/bootstrap-datetimepicker.min.css') ?>">
+
   <!-- endbuild -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300">
   <script src="<?php echo media_url('library/breakpoints.js/dist/breakpoints.min.js') ?>"></script>
@@ -134,7 +134,6 @@
 <!-- build:js ../assets/js/app.min.js -->
 <script src="<?php echo media_url('js/library.js') ?>"></script>
 <script src="<?php echo media_url('js/bootstrap-datepicker.min.js') ?>"></script>
-<script src="<?php echo media_url('js/bootstrap-datetimepicker.min.js') ?>"></script>
 <script src="<?php echo media_url('js/plugins.js') ?>"></script>
 <script src="<?php echo media_url('js/app.js') ?>"></script>
 <script src="<?php echo media_url('js/jquery.toast.js') ?>"></script>

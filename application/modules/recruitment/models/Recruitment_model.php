@@ -9,6 +9,10 @@ class Recruitment_model extends CI_Model {
 			$this->db->where('recruitments.recruitment_id', $params['id']);
 		}
 
+		if (isset($params['publish'])) {
+			$this->db->where('recruitments.recruitment_status', $params['publish']);
+		}
+
 		if (isset($params['limit'])) {
 			if (!isset($params['offset'])) {
 				$params['offset'] = NULL;

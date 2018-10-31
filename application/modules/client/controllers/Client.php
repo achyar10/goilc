@@ -12,7 +12,7 @@ class Client extends CI_Controller {
 	public function index()
 	{
 		$data['client'] = $this->Client_model->get();
-		$data['title'] = 'Client';
+		$data['title'] = 'Our Client';
 		$data['main'] = 'client/client';
 		$this->load->view('frontend/layout', $data);	
 	}

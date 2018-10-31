@@ -6,7 +6,7 @@ class Training extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(array('training/Training_model'));
+		$this->load->model(array('training/Training_model', 'category/Category_model'));
 	}
 
 	public function index($offset = NULL)
@@ -22,6 +22,10 @@ class Training extends CI_Controller {
 			$params['search'] = $f['n'];
 		}
 
+		if (isset($f['c']) && !empty($f['c']) && $f['c'] != '') {
+			$params['cat'] = $f['c'];
+		}
+
 		$paramsPage = $params;
 		$params['limit'] = 9;
 		$params['offset'] = $offset;
@@ -34,6 +38,7 @@ class Training extends CI_Controller {
 		$this->pagination->initialize($config);
 
 		$data['training'] = $this->Training_model->get($params);
+		$data['category'] = $this->Category_model->get();
 		$data['title'] = 'Daftar Training';
 		$data['main'] = 'training/training';
 		$this->load->view('frontend/layout', $data);

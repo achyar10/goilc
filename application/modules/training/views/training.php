@@ -16,10 +16,18 @@
 	<?php echo form_open(current_url(), array('method' => 'get')) ?>
 	<div class="search-result">
 		<div class="input-group col-md-2">
-			<input type="text" class="form-control" name="n" placeholder="Search training">
+			<input type="text" class="form-control" name="n" <?php echo (isset($f['n'])) ? 'placeholder="'.$f['n'].'"' : 'placeholder="Search Training"' ?>>
 			<span class="input-group-btn">
 				<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 			</span>
+		</div>
+		<div class="col-md-3">
+			<select class="form-control" name="c" onchange="this.form.submit()">
+				<option value="">--Categories--</option>
+				<?php foreach($category as $row): ?>
+					<option value="<?php echo $row['category_id'] ?>" <?php echo (isset($f['c']) AND $f['c'] == $row['category_id']) ? 'selected' : '' ?>><?php echo $row['category_name'] ?></option>
+				<?php endforeach; ?>
+			</select>
 		</div>
 		<?php echo form_close(); ?>
 	</div>
@@ -34,10 +42,11 @@
 						<h3><?php echo $row['training_name'] ?></h3>
 					</div>  
 					<div class="welcome-content">
+						<p><?php echo $row['category_name'] ?></p>
 						<br>
 						<ul class="course-detail">
 							<li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
-							<li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']) ?></span></li>
+							<li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']). '/participant' ?></span></li>
 							<li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
 						</ul>
 						<a href="<?php echo training_url($row) ?>" style="color: #fff;">Detail</a>

@@ -56,10 +56,11 @@ a{
             <h3><?php echo $row['training_name'] ?></h3>
           </div>  
           <div class="welcome-content">
+            <p><?php echo $row['category_name'] ?></p>
             <br>
             <ul class="course-detail">
               <li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
-              <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']) ?></span></li>
+              <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']).' /participant' ?></span></li>
               <li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
             </ul>
             <a href="<?php echo training_url($row) ?>">Detail</a>
@@ -67,6 +68,9 @@ a{
         </div>
       </div>
     <?php endforeach; ?>
+  </div>
+  <div class="section-header-block">
+    <a href="<?php echo site_url('training') ?>" class="" >View All</a>
   </div>
   <div class="section-padding"></div>
 </div><!-- Welcome Section /- -->
@@ -90,7 +94,7 @@ a{
             </div>
           </div>
           <div class="col-md-7 col-sm-6 col-xs-7">
-            <h3><a href="#"><?php echo $row['gallery_name'] ?></a></h3>
+            <h3><a href="<?php echo site_url('event/detail/'.$row['gallery_id']) ?>"><?php echo $row['gallery_name'] ?></a></h3>
             <div class="event-meta">
               <span><i aria-hidden="true" class="fa fa-calendar"></i><?php echo pretty_date($row['gallery_date'],'d F Y',false) ?></span>
               <span><i aria-hidden="true" class="fa fa-map-marker"></i><?php echo $row['gallery_place'] ?></span>
@@ -107,7 +111,7 @@ a{
   <div class="section-padding"></div>
 </div><!-- Event Section /- --> 
 
-<div style="background-color: #eee">
+<div style="background-color: #EDF0F5">
   <div class="container">
     <div class="section-header">
       <h3 style="margin-top: 20px;">Our <span>Client</span></h3>

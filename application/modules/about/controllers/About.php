@@ -12,7 +12,7 @@ class About extends CI_Controller {
 
 		$config['base_url'] = site_url('about/index');
 		$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-		$data['title'] = 'Tentang Kami';
+		$data['title'] = 'About Us';
 		$data['main'] = 'about/about';
 		$this->load->view('frontend/layout', $data);
 	}

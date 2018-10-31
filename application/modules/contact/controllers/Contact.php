@@ -45,7 +45,7 @@ class Contact extends CI_Controller {
 
 			$config['base_url'] = site_url('contact/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-			$data['title'] = 'Hubungi Kami';
+			$data['title'] = 'Contact Us';
 			$data['main'] = 'contact/contact';
 			$this->load->view('frontend/layout', $data);
 		}

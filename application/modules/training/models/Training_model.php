@@ -17,10 +17,11 @@ class Training_model extends CI_Model {
         if(isset($params['search']))
         {
             $this->db->like('training_name', $params['search']);
+            $this->db->or_like('category_name', $params['search']);
         }
 
-        if (isset($params['category_id'])) {
-            $this->db->where('category_id', $params['category_id']);
+        if (isset($params['cat'])) {
+            $this->db->where('categories.category_id', $params['cat']);
         }
 
         if (isset($params['status'])) {

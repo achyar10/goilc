@@ -40,7 +40,9 @@ class Register_model extends CI_Model {
             $this->db->order_by('register_input_date', 'desc');
         }
 
-        $this->db->select('*');
+        $this->db->select('registers.register_id, register_no, register_corporate, register_pic_name, register_pic_jab, register_pic_tlp, register_pic_fax, register_pic_email, register_pic_phone, register_pay_name, register_pay_jab, register_pay_tlp, register_pay_fax, register_pay_phone, register_add_inv, register_status, register_input_date, register_last_update');
+        $this->db->select('member_name, member_jab, member_phone, member_email');
+        $this->db->select('registers.training_id, training_name, training_place, training_date_start, training_date_end');
 
         $this->db->join('members', 'members.register_id = registers.register_id','left');
         $this->db->join('trainings', 'trainings.training_id = registers.training_id','left');

@@ -22,6 +22,7 @@ class Recruitment extends CI_Controller {
 			$params['search'] = $f['n'];
 		}
 
+		$params['publish'] = TRUE;
 		$paramsPage = $params;
 		$params['limit'] = 5;
 		$params['offset'] = $offset;
@@ -33,16 +34,9 @@ class Recruitment extends CI_Controller {
 		$config['total_rows'] = count($this->Recruitment_model->get($paramsPage));
 		$this->pagination->initialize($config);
 
-		$data['recruitment'] = $this->Recruitment_model->get();
+		$data['recruitment'] = $this->Recruitment_model->get($params);
 		$data['title'] = 'Carrer';
 		$data['main'] = 'recruitment/recruitment';
-		$this->load->view('frontend/layout', $data);	
-	}
-
-	function detail($id = NULL) {
-		$data['recruitment'] = $this->Recruitment_model->get(array('id'=>$id));
-		$data['title'] = 'Carrer Detail';
-		$data['main'] = 'recruitment/recruitment_detail';
 		$this->load->view('frontend/layout', $data);	
 	}
 
