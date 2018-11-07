@@ -28,6 +28,10 @@ class Training_model extends CI_Model {
             $this->db->where('training_status', $params['status']);
         }
 
+        if(isset($params['date'])){ 
+            $this->db->where("DATE_FORMAT(training_date_start,'%Y-%m')", $params['date']);
+        }
+
         if (isset($params['service_id'])) {
             $this->db->where('service_id', $params['service_id']);
         }
@@ -46,7 +50,10 @@ class Training_model extends CI_Model {
             $this->db->order_by('training_input_date', 'desc');
         }
 
-        $this->db->select('*');
+        $this->db->select('training_id, training_name, training_place, training_date_start, training_date_end, training_time, training_price, training_brocure, training_cover_letter, training_silabus, training_status, training_input_date, training_last_update');
+        $this->db->select('trainings.category_id, category_name');
+        $this->db->select('trainings.user_id, category_name');
+        $this->db->select('trainings.service_id, service_name');
 
         $this->db->join('users', 'users.user_id = trainings.user_id','left');
         $this->db->join('categories', 'categories.category_id = trainings.category_id','left');

@@ -114,27 +114,22 @@ a{
     <div class="section-header">
       <h3>Avaiable Training Public <span>&</span> In House</h3>
     </div>
-    <a href="<?php echo site_url('event') ?>" title="View All">View All</a>
+    <a href="<?php echo site_url('training') ?>" title="View All">View All</a>
   </div>
   <div class="event-block">
-    <?php foreach($event as $row): ?>
+    <?php foreach($inhouse as $row): ?>
       <div class="event-box">
         <div class="row">
-          <div class="col-md-3 col-sm-4 col-xs-5">
-            <div class="imgLiquidFill imgLiquid" style="width:260px; height:160px;">
-              <img src="<?php echo upload_url('gallery/'.$row['gallery_image']) ?>">
-            </div>
-          </div>
-          <div class="col-md-7 col-sm-6 col-xs-7">
-            <h3><a href="<?php echo site_url('event/detail/'.$row['gallery_id']) ?>"><?php echo $row['gallery_name'] ?></a></h3>
+          <div class="col-md-9">
+            <h3><a href="<?php echo training_url($row) ?>"><?php echo $row['training_name'] ?></a></h3>
             <div class="event-meta">
-              <span><i aria-hidden="true" class="fa fa-calendar"></i><?php echo pretty_date($row['gallery_date'],'d F Y',false) ?></span>
-              <span><i aria-hidden="true" class="fa fa-map-marker"></i><?php echo $row['gallery_place'] ?></span>
+              <span><i aria-hidden="true" class="fa fa-calendar"></i><?php echo pretty_date($row['training_date_start'],'d F Y',false) ?></span>
+              <span><i aria-hidden="true" class="fa fa-map-marker"></i><?php echo $row['training_place'] ?></span>
             </div>
-            <p><?php echo $row['gallery_desc'] ?></p>
+            <p><?php echo strip_tags(character_limiter($row['training_cover_letter'],20)) ?></p>
           </div>
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <a href="<?php echo site_url('event/detail/'.$row['gallery_id']) ?>" class="readmore" title="Read More">Read More</a>
+          <div class="col-md-3 col-sm-2 col-xs-12">
+            <a href="<?php echo training_url($row) ?>" class="readmore" title="Read More">Read More</a>
           </div>
         </div>
       </div>
@@ -142,18 +137,18 @@ a{
   </div>
   <div class="section-padding"></div>
 </div><!-- Event Section /- --> 
+<script src="<?php echo media_url('frontend/js/slick.js') ?>">
+</script>
 
-<div style="background-color: #EDF0F5">
-  <div class="container">
-    <div class="section-header">
-      <h3 style="margin-top: 20px;">Our <span>Client</span></h3>
-      <?php foreach($client as $row): ?>
-        <div class="col-md-2 col-sm-3 col-xs-6">
-          <div class="imgLiquidFill imgLiquid" style="width:100px; height:100px;">
-            <img src="<?php echo upload_url('client/'.$row['client_image']) ?>">
-          </div>
-        </div>
+<div class="container">
+  <div class="section-header">
+  <h3 style="margin-top: 20px;">Our <span>Client</span></h3>
+   <section class="customer-logos slider">
+    <?php foreach($client as $row): ?>
+      <div class="slide">
+        <img src="<?php echo upload_url('client/'.$row['client_image']) ?>">
+      </div>
       <?php endforeach; ?>
-    </div>
-  </div>
+   </section>
+</div>
 </div>

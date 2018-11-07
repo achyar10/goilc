@@ -29,11 +29,12 @@ class Home extends CI_Controller {
 
 		} else {
 
-			$params['status'] = TRUE;
-			// $params['limit'] = 3;
+			// $params['status'] = TRUE;
+			$params['date'] = date('Y-m');
 			$config['base_url'] = site_url('home/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-			$data['training'] = $this->Training_model->get();
+			$data['training'] = $this->Training_model->get($params);
+			$data['inhouse'] = $this->Training_model->get(array('limit'=>5));
 			$data['event'] = $this->Gallery_model->get($params);
 			$data['client'] = $this->Client_model->get();
 			$data['title'] = 'Home';
