@@ -4,32 +4,24 @@ a{
 }
 </style>
 <div class="photoslider-section container-fluid no-padding">
-  <div id="home-slider" class="carousel slide" data-ride="carousel">
+  <div id="home-slider" class="carousel slide" data-ride="carousel" data-interval="3500">
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="<?php echo media_url('frontend/images/slide-1.jpg') ?>" alt="photoslider1" width="1920" height="801"/>
-        <div class="carousel-caption" style="display:block;">
-          <div class="container">
-            <div class="col-md-6 col-sm-8 col-xs-8 ow-pull-right no-padding">
-              <h4 data-animation="animated bounceInLeft">iLC</h4>
-              <h3 data-animation="animated fadeInDown"><span>Learning Center</span></h3>
-              <p data-animation="animated bounceInRight">We belive nothing is more important than education. The best learning institution</p>
+      <?php $active = 'active' ?>
+      <?php foreach ($slide as $row): ?>
+        <div class="item <?php echo $active ?>">
+          <img src="<?php echo upload_url('slideshow/'.$row['slideshow_image']) ?>" alt="photoslider1" width="1920" height="801"/>
+          <div class="carousel-caption" style="display:block;">
+            <div class="container">
+              <div class="col-md-6 col-sm-8 col-xs-8 ow-pull-right no-padding">
+                <h4 data-animation="animated bounceInLeft">iLC</h4>
+                <h3 data-animation="animated fadeInDown"><span>Learning Center</span></h3>
+                <p data-animation="animated bounceInRight">We believe nothing is more important than education. The best learning institution</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="item">
-        <img src="<?php echo media_url('frontend/images/slide-2.jpg') ?>" alt="photoslider2" width="1920" height="801"/>
-        <div class="carousel-caption" style="display:block;">
-          <div class="container">
-            <div class="col-md-6 col-sm-8 col-xs-8 ow-pull-left no-padding">
-              <h4 data-animation="animated bounceInLeft">iLC</h4>
-              <h3 data-animation="animated fadeInDown"><span>Learning Center</span></h3>
-              <p data-animation="animated bounceInRight">We belive nothing is more important than education. The best learning institution</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <?php $active = NULL ?>
+      <?php endforeach; ?>
     </div>
     <a class="left carousel-control" href="#home-slider" role="button" data-slide="prev">
       <i class="fa fa-angle-left"></i>
@@ -112,7 +104,7 @@ a{
   <div class="section-padding"></div> 
   <div class="section-header-block">
     <div class="section-header">
-      <h3>Avaiable Training Public <span>&</span> In House</h3>
+      <h3>Available Training Public <span>&</span> In House</h3>
     </div>
     <a href="<?php echo site_url('training') ?>" title="View All">View All</a>
   </div>
@@ -142,13 +134,13 @@ a{
 
 <div class="container">
   <div class="section-header">
-  <h3 style="margin-top: 20px;">Our <span>Client</span></h3>
-   <section class="customer-logos slider">
-    <?php foreach($client as $row): ?>
-      <div class="slide">
-        <img src="<?php echo upload_url('client/'.$row['client_image']) ?>">
-      </div>
+    <h3 style="margin-top: 20px;">Our <span>Client</span></h3>
+    <section class="customer-logos slider">
+      <?php foreach($client as $row): ?>
+        <div class="slide">
+          <img src="<?php echo upload_url('client/'.$row['client_image']) ?>">
+        </div>
       <?php endforeach; ?>
-   </section>
-</div>
+    </section>
+  </div>
 </div>

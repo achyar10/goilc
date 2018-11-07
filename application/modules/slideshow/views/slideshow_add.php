@@ -31,7 +31,7 @@ if (isset($slideshow)) {
 						<input name="slideshow_name" type="text" class="form-control" value="<?php echo $inputNameValue ?>" placeholder="Judul">
 					</div>
 					<div class="form-group">
-						<label for="slideshow_image">Upload Gambar Slide</label>
+						<label for="slideshow_image">Upload Gambar Slide Ukuran 1920x801</label>
 						<a href="#" class="thumbnail">
 							<?php if (isset($slideshow) AND $slideshow['slideshow_image'] != NULL) { ?>
 								<img src="<?php echo upload_url('slideshow/' . $slideshow['slideshow_image']) ?>" class="img-responsive img-thumbnail">

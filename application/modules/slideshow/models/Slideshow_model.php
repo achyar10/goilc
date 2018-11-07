@@ -9,6 +9,10 @@ class Slideshow_model extends CI_Model {
 			$this->db->where('slideshows.slideshow_id', $params['id']);
 		}
 
+		if (isset($params['publish'])) {
+			$this->db->where('slideshows.slideshow_status', $params['publish']);
+		}
+
 		if (isset($params['limit'])) {
 			if (!isset($params['offset'])) {
 				$params['offset'] = NULL;

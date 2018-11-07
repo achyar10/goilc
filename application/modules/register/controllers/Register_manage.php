@@ -53,12 +53,14 @@ class Register_manage extends CI_Controller {
 	}
 
 	function print_reg($id = NULL) {
+
+		$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 		$data['register'] = $this->Register_model->get(array('id'=>$id));
 		$data['member'] = $this->Register_model->get_member(array('register_id'=>$id));
-
-		$this->load->helper('dompdf');
 		$html = $this->load->view('register/register_pdf', $data, true);
-		$data = pdf_create($html, $data['register']['register_corporate'].'_'.$data['register']['register_no'], 'A4');
+		$fileName = $data['register']['register_corporate'].'_'.$data['register']['register_no'];
+		$mpdf->WriteHTML(utf8_encode($html));
+		$mpdf->Output($fileName.".pdf",'I');
 	}
 
 	function approve($id = NULL) {

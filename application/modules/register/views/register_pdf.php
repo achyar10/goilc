@@ -27,7 +27,7 @@
 <body>
 	<img src="<?php echo media_url('img/logo.png') ?>" style="height: 80px">
 	<h3 style="margin-top: -60px;margin-left:200px; background-color: red;color: #fff;padding: 10px;">&nbsp;&nbsp;FORMULIR PENDAFTARAN TRAINING / WORKSHOP</h3>
-	<table width="100%" border="1px">
+	<table width="100%" border="1">
 		<tr>
 			<td style="font-weight: bold;">JUDUL TRAINING / WORKSHOP</td>
 			<td>: <?php echo $register['training_name'] ?></td>
@@ -46,7 +46,7 @@
 		</tr>
 	</table>
 	<br>
-	<table width="100%" border="1px">
+	<table width="100%" border="1">
 		<tr style="white-space: nowrap;">
 			<th>NO</th>
 			<th>NAMA</th>
@@ -69,7 +69,7 @@
 		endforeach; ?>
 	</table>
 	<br>
-	<table width="100%" border="1px">
+	<table width="100%" border="1">
 		<tr style="white-space: nowrap;">
 			<th colspan="2" align="center">PENANGGUNG JAWAB PENDAFTARAN</th>
 			<td rowspan="7" style="background-color: #19b5fe">&nbsp;</td>
@@ -113,7 +113,7 @@
 		</tr>
 	</table>
 	<br>
-	<table width="100%" border="1px">
+	<table width="100%" border="1">
 		<tr>
 			<td style="text-align: center;font-weight: bold;">TANDA TANGAN DAN STEMPEL PERUSAHAAN</td>
 			<td rowspan="2" style="text-align: justify;font-size: 11pt">Kebijakan Pembatalan Training/Workshop :<br><br>
@@ -123,7 +123,7 @@
 			** Formulir pendaftaran yang telah di lengkapi di kembalikan via email ke : <u>rahmayuniarti.ilc@gmail.com;</u> <u>adesepti.ilc@gmail.com;</u></td>
 		</tr>
 		<tr>
-			<td></td>
+			<td style="padding-bottom: 100px;"></td>
 		</tr>
 	</table>
 
