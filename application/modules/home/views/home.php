@@ -8,7 +8,7 @@ a{
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img src="<?php echo media_url('frontend/images/slide-1.jpg') ?>" alt="photoslider1" width="1920" height="801"/>
-        <div class="carousel-caption">
+        <div class="carousel-caption" style="display:block;">
           <div class="container">
             <div class="col-md-6 col-sm-8 col-xs-8 ow-pull-right no-padding">
               <h4 data-animation="animated bounceInLeft">iLC</h4>
@@ -20,7 +20,7 @@ a{
       </div>
       <div class="item">
         <img src="<?php echo media_url('frontend/images/slide-2.jpg') ?>" alt="photoslider2" width="1920" height="801"/>
-        <div class="carousel-caption">
+        <div class="carousel-caption" style="display:block;">
           <div class="container">
             <div class="col-md-6 col-sm-8 col-xs-8 ow-pull-left no-padding">
               <h4 data-animation="animated bounceInLeft">iLC</h4>
@@ -43,31 +43,64 @@ a{
 <div class="container welcome-section">
   <div class="section-padding"></div>
   <div class="section-header">
-    <h3>Pelatihan <span>Terbaru</span></h3>
+    <h3>Running soon workshop <span>&</span> discussion</h3>
   </div>
+  
+
+
   <div class="row">
-    <?php foreach($training as $row): ?>
-      <div class="col-md-4 col-sm-6 col-xs-6">
-        <div class="welcome-box">
-          <div class="imgLiquidFill imgLiquid" style="width:auto; height:300px;">
-            <img src="<?php echo upload_url('training/'.$row['training_brocure']) ?>">
-          </div>
-          <div class="welcome-title">
-            <h3><?php echo $row['training_name'] ?></h3>
-          </div>  
-          <div class="welcome-content">
-            <p><?php echo $row['category_name'] ?></p>
-            <ul class="course-detail">
-              <li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
-              <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']).' /participant' ?></span></li>
-              <li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
-            </ul>
-            <a href="<?php echo training_url($row) ?>">Detail</a>
-          </div>
+    <div class="col-xs-12 col-md-12">
+
+      <div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi">
+        <div class="carousel-inner">
+          <?php $active = 'active' ?>
+          <?php foreach ($training as $row): ?>
+            <div class="item <?php echo $active ?>">
+              <div class="carousel-col">
+                <div class="img-responsive">
+                  <div class="welcome-box">
+                    <div class="imgLiquidFill imgLiquid" style="width:auto; height:300px;">
+                      <img src="<?php echo upload_url('training/'.$row['training_brocure']) ?>">
+                    </div>
+                    <div class="welcome-title">
+                      <h3><?php echo $row['training_name'] ?></h3>
+                    </div>  
+                    <div class="welcome-content">
+                      <p><?php echo $row['category_name'] ?></p>
+                      <ul class="course-detail">
+                        <li><i class="fa fa-calendar" aria-hidden="true"></i>Date : <span><?php echo pretty_date($row['training_date_start'],'d-M-Y',false) . ' - '.pretty_date($row['training_date_end'],'d-M-Y',false) ?></span></li>
+                        <li><i class="fa fa-dollar" aria-hidden="true"></i> Price : <span><?php echo 'Rp. '. number_format($row['training_price']).' /participant' ?></span></li>
+                        <li><i class="fa fa-building" aria-hidden="true"></i>Place : <span><?php echo $row['training_place'] ?></span></li>
+                      </ul>
+                      <a href="<?php echo training_url($row) ?>">Detail</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php $active = NULL ?>
+          <?php endforeach; ?>
+        </div>
+
+        <!-- Controls -->
+        <div class="left carousel-control">
+          <a href="#carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+        <div class="right carousel-control">
+          <a href="#carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-    <?php endforeach; ?>
+
+    </div>
   </div>
+
+  
   <div class="section-header-block">
     <a href="<?php echo site_url('training') ?>" class="" >View All</a>
   </div>
@@ -79,7 +112,7 @@ a{
   <div class="section-padding"></div> 
   <div class="section-header-block">
     <div class="section-header">
-      <h3>Our <span>Events</span></h3>
+      <h3>Avaiable Training Public <span>&</span> In House</h3>
     </div>
     <a href="<?php echo site_url('event') ?>" title="View All">View All</a>
   </div>

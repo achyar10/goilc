@@ -39,7 +39,7 @@
 					<i class="fa fa-clock-o"></i> <span> <?php echo $training['training_time'].' WIB' ?></span>
 				</div>
 				<div class="text-center" style="margin-bottom: 20px; margin-top: 20px;">
-					<a href="<?php echo site_url('register/regtraining/'.$training['training_id']) ?>" class="btn btn-default btn-next">Register</a>
+					<a href="<?php echo site_url('register/regtraining/'.$training['training_id']) ?>" class="btn btn-default btn-next">Apply</a>
 				</div>
 				<div class="text-center" style="margin-bottom: 20px; margin-top: 20px;">
 					<a href="<?php echo upload_url('silabus/'.$training['training_silabus']) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Download Silabus</a>

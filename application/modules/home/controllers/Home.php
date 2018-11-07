@@ -30,10 +30,10 @@ class Home extends CI_Controller {
 		} else {
 
 			$params['status'] = TRUE;
-			$params['limit'] = 3;
+			// $params['limit'] = 3;
 			$config['base_url'] = site_url('home/index');
 			$config['suffix'] = '?' . http_build_query($_GET, '', "&");
-			$data['training'] = $this->Training_model->get($params);
+			$data['training'] = $this->Training_model->get();
 			$data['event'] = $this->Gallery_model->get($params);
 			$data['client'] = $this->Client_model->get();
 			$data['title'] = 'Home';
