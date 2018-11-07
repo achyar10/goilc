@@ -5,9 +5,9 @@ if (!defined('BASEPATH'))
 
 
 $config['from'] = 'noreply@goilc.co.id';
-$config['from_name'] = 'iLC Learning Center';
+$config['from_name'] = 'Auto Email iLC Learning Centre';
 $config['protocol'] = 'smtp';
-$config['smtp_host'] = 'ssl://mail.goilc.co.id';
+$config['smtp_host'] = 'mail.goilc.co.id';
 $config['smtp_port'] = 465;
 $config['smtp_user'] = 'noreply@goilc.co.id';
 $config['smtp_pass'] = '@admin234#';

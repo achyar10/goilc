@@ -120,10 +120,13 @@ class Blasting_manage extends CI_Controller {
 			$this->email->subject($data['blasting']['blasting_title']);
 			$message = $this->load->view('email/blasting_email', $data, TRUE);
 			$this->email->message($message);
-			$this->email->send();
+			if ($this->email->send()) {
+				$this->session->set_flashdata('success', 'blasting success');
+				redirect('manage/blasting');
+			} else {
+				show_error($this->email->print_debugger());
+			}
 		}
-		$this->session->set_flashdata('success', 'blasting success');
-			redirect('manage/blasting');
 	}
 
 
