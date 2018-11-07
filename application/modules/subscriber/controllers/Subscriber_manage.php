@@ -22,7 +22,7 @@ class Subscriber_manage extends CI_Controller {
 		$params = array();
         // Nip
 		if (isset($f['n']) && !empty($f['n']) && $f['n'] != '') {
-			$params['name'] = $f['n'];
+			$params['email'] = $f['n'];
 		}
 
 		$paramsPage = $params;
@@ -47,6 +47,12 @@ class Subscriber_manage extends CI_Controller {
 		$data['title'] = 'Subscriber Detail';
 		$data['main'] = 'subscriber/subscriber_view';
 		$this->load->view('manage/layout', $data);
+	}
+
+	function delete($id = NULL) {
+		$this->Subscriber_model->delete($id);
+		$this->session->set_flashdata('success', 'Hapus Subscriber success');
+			redirect('manage/subscriber');
 	}
 
 	public function import() {

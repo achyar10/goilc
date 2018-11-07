@@ -9,6 +9,10 @@ class Subscriber_model extends CI_Model {
             $this->db->where('subscribers.subscriber_id', $params['id']);
         }
 
+        if (isset($params['email'])) {
+            $this->db->like('subscribers.subscriber_email', $params['email']);
+        }
+
         if (isset($params['limit'])) {
             if (!isset($params['offset'])) {
                 $params['offset'] = NULL;
