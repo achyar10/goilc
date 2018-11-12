@@ -35,7 +35,7 @@ class Recruitment extends CI_Controller {
 		$this->pagination->initialize($config);
 
 		$data['recruitment'] = $this->Recruitment_model->get($params);
-		$data['title'] = 'Carrer';
+		$data['title'] = 'Career';
 		$data['main'] = 'recruitment/recruitment';
 		$this->load->view('frontend/layout', $data);	
 	}

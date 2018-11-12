@@ -42,7 +42,7 @@
                <li><a href="<?php echo site_url('client') ?>">Client</a></li>
                <li><a href="<?php echo site_url('about') ?>">About Us</a></li>
                <li><a href="<?php echo site_url('contact') ?>">Contact Us</a></li>
-               <li><a href="<?php echo site_url('recruitment') ?>">Carrer</a></li>
+               <li><a href="<?php echo site_url('recruitment') ?>">Career</a></li>
              </ul>
            </div>
          </div>
