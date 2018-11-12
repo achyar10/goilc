@@ -44,7 +44,7 @@ if (isset($training)) {
 					
 					<div class="form-group">
 						<label>Nama Pelatihan</label>
-						<input name="training_name" type="text" class="form-control" value="<?php echo $inputNameValue ?>" placeholder="Nama Pelatihan">
+						<input name="training_name" type="text" class="form-control" value="<?php echo $inputNameValue ?>" placeholder="Nama Pelatihan" required="">
 					</div>
 
 					<div class="row">

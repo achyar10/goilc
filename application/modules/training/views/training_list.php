@@ -23,7 +23,7 @@
 										<td><?php echo $i; ?></td>
 										<td><?php echo $row['training_name']; ?></td>
 										<td><?php echo $row['category_name']; ?></td>
-										<td><?php echo pretty_date($row['training_date_start'],'d F Y',false).' s.d '.pretty_date($row['training_date_end'],'d F Y',false) ?></td>
+										<td><?php echo pretty_date($row['training_date_start'],'d-m-Y',false).' s.d '.pretty_date($row['training_date_end'],'d-m-Y',false) ?></td>
 										<td><span class="label label-<?php echo ($row['training_status']==1) ? 'success' : 'danger'?>"><?php echo ($row['training_status']==1) ? 'Aktif' : 'Tidak Aktif' ?></span></td>
 										<td>
 											<a href="<?php echo site_url('manage/training/edit/'.$row['training_id']) ?>" class="btn btn-success btn-xs">Edit</a>
