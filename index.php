@@ -313,7 +313,6 @@ switch (ENVIRONMENT)
  */
 require_once FCPATH.'constants.php';
 date_default_timezone_set('Asia/Jakarta');
-require_once FCPATH . 'vendor/autoload.php';
 
 /*
  * --------------------------------------------------------------------

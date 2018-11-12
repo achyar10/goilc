@@ -16,7 +16,6 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('register_corporate', 'Perusahaan', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('register_pic_name', 'Nama', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('register_pic_email', 'Email', 'trim|xss_clean|required');
-		$this->form_validation->set_rules('register_pic_phone', 'Telepon', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('training_id', 'Pelatihan', 'trim|xss_clean|required');
 
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button position="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
@@ -33,15 +32,21 @@ class Register extends CI_Controller {
 			$params['register_corporate'] = $this->input->post('register_corporate');
 			$params['register_pic_name'] = $this->input->post('register_pic_name');
 			$params['register_pic_email'] = $this->input->post('register_pic_email');
-			$params['register_pic_phone'] = $this->input->post('register_pic_phone');
+
+			$params['register_pic_phone'] = ($this->input->post('register_pic_phone')==NULL) ? '-' : $this->input->post('register_pic_phone');
+
 			$params['register_pic_jab'] = $this->input->post('register_pic_jab');
-			$params['register_pic_tlp'] = $this->input->post('register_pic_tlp');
-			$params['register_pic_fax'] = $this->input->post('register_pic_fax');
+
+			$params['register_pic_tlp'] = ($this->input->post('register_pic_tlp') == NULL) ? '-' : $this->input->post('register_pic_tlp');
+			$params['register_pic_fax'] = ($this->input->post('register_pic_fax')==NULL) ? '-' : $this->input->post('register_pic_fax');
+
 			$params['register_pay_name'] = $this->input->post('register_pay_name');
 			$params['register_pay_jab'] = $this->input->post('register_pay_jab');
-			$params['register_pay_tlp'] = $this->input->post('register_pay_tlp');
-			$params['register_pay_fax'] = $this->input->post('register_pay_fax');
-			$params['register_pay_phone'] = $this->input->post('register_pay_phone');
+
+			$params['register_pay_tlp'] = ($this->input->post('register_pay_tlp')==NULL) ? '-' : $this->input->post('register_pay_tlp');
+			$params['register_pay_fax'] = ($this->input->post('register_pay_fax')==NULL) ? '-' : $this->input->post('register_pay_fax');
+			$params['register_pay_phone'] = ($this->input->post('register_pay_phone')==NULL) ? '-' : $this->input->post('register_pay_phone');
+
 			$params['register_add_inv'] = $this->input->post('register_add_inv');
 			$params['training_id'] = $this->input->post('training_id');
 			$params['register_input_date'] = date('Y-m-d H:i:s');
@@ -81,7 +86,6 @@ class Register extends CI_Controller {
 		$this->form_validation->set_rules('register_corporate', 'Perusahaan', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('register_pic_name', 'Nama', 'trim|xss_clean|required');
 		$this->form_validation->set_rules('register_pic_email', 'Email', 'trim|xss_clean|required');
-		$this->form_validation->set_rules('register_pic_phone', 'Telepon', 'trim|xss_clean|required');
 
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button position="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
 
@@ -92,17 +96,23 @@ class Register extends CI_Controller {
 			$params['register_corporate'] = $this->input->post('register_corporate');
 			$params['register_pic_name'] = $this->input->post('register_pic_name');
 			$params['register_pic_email'] = $this->input->post('register_pic_email');
-			$params['register_pic_phone'] = $this->input->post('register_pic_phone');
+
+			$params['register_pic_phone'] = ($this->input->post('register_pic_phone')==NULL) ? '-' : $this->input->post('register_pic_phone');
+
 			$params['register_pic_jab'] = $this->input->post('register_pic_jab');
-			$params['register_pic_tlp'] = $this->input->post('register_pic_tlp');
-			$params['register_pic_fax'] = $this->input->post('register_pic_fax');
+
+			$params['register_pic_tlp'] = ($this->input->post('register_pic_tlp') == NULL) ? '-' : $this->input->post('register_pic_tlp');
+			$params['register_pic_fax'] = ($this->input->post('register_pic_fax')==NULL) ? '-' : $this->input->post('register_pic_fax');
+
 			$params['register_pay_name'] = $this->input->post('register_pay_name');
 			$params['register_pay_jab'] = $this->input->post('register_pay_jab');
-			$params['register_pay_tlp'] = $this->input->post('register_pay_tlp');
-			$params['register_pay_fax'] = $this->input->post('register_pay_fax');
-			$params['register_pay_phone'] = $this->input->post('register_pay_phone');
+
+			$params['register_pay_tlp'] = ($this->input->post('register_pay_tlp')==NULL) ? '-' : $this->input->post('register_pay_tlp');
+			$params['register_pay_fax'] = ($this->input->post('register_pay_fax')==NULL) ? '-' : $this->input->post('register_pay_fax');
+			$params['register_pay_phone'] = ($this->input->post('register_pay_phone')==NULL) ? '-' : $this->input->post('register_pay_phone');
+			
 			$params['register_add_inv'] = $this->input->post('register_add_inv');
-			$params['training_id'] = $id;
+			$params['training_id'] = $this->input->post('training_id');
 			$params['register_input_date'] = date('Y-m-d H:i:s');
 			$params['register_last_update'] = date('Y-m-d H:i:s');
 

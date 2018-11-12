@@ -1,6 +1,7 @@
 <section class="app-content">
 	<div class="widget p-lg">
 		<h4 class="m-b-lg"><?php echo $register['register_corporate'] ?> <?php echo ($register['register_status']==1) ? '<label class="label label-success">Disetujui</label>' : (($register['register_status']==2) ? '<label class="label label-danger">Ditolak</label>' : NULL ) ?> <a target="_blank" href="<?php echo site_url('manage/register/print_reg/'.$register['register_id']) ?>" class="btn btn-xs btn-primary pull-right"><i class="fa fa-file-pdf-o"></i> Cetak Formulir</a></h4>
+		<h4><?php echo $register['training_name'] ?></h4>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="table-responsive">

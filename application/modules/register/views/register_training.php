@@ -31,17 +31,17 @@
 									</div>
 									<div class="col-md-12 col-sm-12 col-xs-12">
 										<div class="form-group">
-											<input type="text" required="" placeholder="Telepon" class="form-control" name="register_pic_tlp">
+											<input type="text" placeholder="Telepon Kantor" class="form-control" name="register_pic_tlp">
 										</div>
 									</div>
 									<div class="col-md-12 col-sm-12 col-xs-12">
 										<div class="form-group">
-											<input type="text" required="" placeholder="Fax" class="form-control" name="register_pic_fax">
+											<input type="text" placeholder="Fax" class="form-control" name="register_pic_fax">
 										</div>
 									</div>
 									<div class="col-md-12 col-sm-12 col-xs-12">
 										<div class="form-group">
-											<input type="text" required="" placeholder="Handphone" class="form-control" name="register_pic_phone">
+											<input type="text" placeholder="Handphone" class="form-control" name="register_pic_phone">
 										</div>
 									</div>
 									<div class="col-md-12 col-sm-12 col-xs-12">
@@ -68,17 +68,17 @@
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<input type="text" required="" placeholder="Tlp PIC Pembayaran" class="form-control" name="register_pay_tlp">
+										<input type="text" placeholder="Tlp Kantor PIC Pembayaran" class="form-control" name="register_pay_tlp">
 									</div>
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<input type="text" required="" placeholder="Fax PIC Pembayaran" class="form-control" name="register_pay_fax">
+										<input type="text" placeholder="Fax PIC Pembayaran" class="form-control" name="register_pay_fax">
 									</div>
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">
 									<div class="form-group">
-										<input type="text" required="" placeholder="Handphone PIC Pembayaran" class="form-control" name="register_pay_phone">
+										<input type="text" placeholder="Handphone PIC Pembayaran" class="form-control" name="register_pay_phone">
 									</div>
 								</div>
 								<div class="col-md-12 col-sm-12 col-xs-12">

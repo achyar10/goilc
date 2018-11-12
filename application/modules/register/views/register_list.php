@@ -17,6 +17,7 @@
 						<tr>
 							<th>No</th>
 							<th>Nomor Register</th>
+							<th>Nama Pelatihan</th>
 							<th>Nama Perusahaan</th>
 							<th>Tanggal Buat</th>
 							<th>Keterangan</th>
@@ -31,6 +32,7 @@
 									<tr>
 										<td><?php echo $i; ?></td>
 										<td><?php echo $row['register_no']; ?></td>
+										<td><?php echo $row['training_name']; ?></td>
 										<td><?php echo $row['register_corporate']; ?></td>
 										<td><?php echo pretty_date($row['register_input_date'],'d F Y',false); ?></td>
 										<td><label class="label <?php echo ($row['register_status']==0) ? 'label-warning' : (($row['register_status']==1) ? 'label-success' : 'label-danger') ?>"><?php echo ($row['register_status']==0) ? 'Belum Proses' : (($row['register_status']==1) ? 'Sudah Proses' : 'Ditolak') ?></label></td>

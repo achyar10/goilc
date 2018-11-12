@@ -8,7 +8,6 @@
       </div>
       <div class="topheader-right">
         <a href="<?php echo site_url('manage') ?>" title="Login"><i class="fa fa-sign-out" aria-hidden="true"></i>Login</a>
-        <a href="<?php echo site_url('register') ?>">Register</a>
       </div>
     </div>
   </div><!-- Top Header /- -->
